@@ -1,4 +1,4 @@
-class CreateFriendships < ActiveRecord::Migration
+u.class CreateFriendships < ActiveRecord::Migration
   def change
     create_table :friendships do |t|
       t.integer :usera_id

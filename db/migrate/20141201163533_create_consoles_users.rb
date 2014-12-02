@@ -1,6 +1,6 @@
-class CreateConsoleUsers < ActiveRecord::Migration
+class CreateConsolesUsers < ActiveRecord::Migration
   def change
-    create_table :console_users do |t|
+    create_table :consoles_users do |t|
       t.integer :user_id
       t.integer :console_id
       t.string :gamer_tag

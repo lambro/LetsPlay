@@ -1,3 +1,3 @@
-class UserGame < ActiveRecord::Base
+class UserGames < ActiveRecord::Base
   attr_accessible :game_id, :user_id
 end

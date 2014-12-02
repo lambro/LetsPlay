@@ -13,20 +13,20 @@
 
 ActiveRecord::Schema.define(:version => 20141201190652) do
 
-  create_table "console_users", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "console_id"
-    t.string   "gamer_tag"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "consoles", :force => true do |t|
     t.string   "name"
     t.text     "console_image"
     t.text     "console_logo"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "consoles_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "console_id"
+    t.string   "gamer_tag"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "friendships", :force => true do |t|
