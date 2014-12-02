@@ -2,7 +2,7 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-app = angular.module('letsPlayApp', ['ngAnimate', 'ngRoute', 'templates']);
+app = angular.module('letsPlayApp', ['ngAnimate', 'ngRoute']);
   app.config(function($routeProvider, $locationProvider){
     $routeProvider.when('/', {
       controller: 'HomeController',
