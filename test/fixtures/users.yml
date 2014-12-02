@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  postcode: MyString
+  dob: 2014-12-01 15:03:54
+  profile_picture: MyText
+
+two:
+  name: MyString
+  email: MyString
+  postcode: MyString
+  dob: 2014-12-01 15:03:54
+  profile_picture: MyText

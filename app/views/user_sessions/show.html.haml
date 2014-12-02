@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @user_session.user_id
+%p
+  %b Gamingsession:
+  = @user_session.gamingsession_id
+%p
+  %b Accepted:
+  = @user_session.accepted
+
+= link_to 'Edit', edit_user_session_path(@user_session)
+\|
+= link_to 'Back', user_sessions_path

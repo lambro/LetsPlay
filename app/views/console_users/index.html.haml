@@ -1,0 +1,23 @@
+%h1 Listing console_users
+
+%table
+  %tr
+    %th User
+    %th Console
+    %th Gamer tag
+    %th
+    %th
+    %th
+
+  - @console_users.each do |console_user|
+    %tr
+      %td= console_user.user_id
+      %td= console_user.console_id
+      %td= console_user.gamer_tag
+      %td= link_to 'Show', console_user
+      %td= link_to 'Edit', edit_console_user_path(console_user)
+      %td= link_to 'Destroy', console_user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Console user', new_console_user_path

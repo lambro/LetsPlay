@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @game.title
+%p
+  %b Genre:
+  = @game.genre
+%p
+  %b Console:
+  = @game.console_id
+%p
+  %b Logo:
+  = @game.logo
+%p
+  %b Image:
+  = @game.image
+
+= link_to 'Edit', edit_game_path(@game)
+\|
+= link_to 'Back', games_path

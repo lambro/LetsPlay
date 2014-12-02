@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="letsPlayApp">
+<head>
+  <title>LetsPlay</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular-route.min.js"></script>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="mainpage" id="mainPage">
+    <h1 id="letsplay">Lets Play</h1>
+    <h1 id="letsplaymini">Lets Play</h1>
+
+    <nav class="main-nav">
+      <a href="#">Gaming Sessions</a>
+      <a href="#">Friends</a>
+      <a href="#">Groups</a>
+      <a href="#">Forum</a>
+      <a href="#">Games</a>
+      <a href="#">Console</a> |
+      <a href="#">My Gaming Sessions</a>
+      <a href="#">My Profile</a>
+    </nav>
+  </header>
+  <div ng-view></div>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+module ConsoleUsersHelper
+end

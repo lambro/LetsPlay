@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @console_user.user_id
+%p
+  %b Console:
+  = @console_user.console_id
+%p
+  %b Gamer tag:
+  = @console_user.gamer_tag
+
+= link_to 'Edit', edit_console_user_path(@console_user)
+\|
+= link_to 'Back', console_users_path

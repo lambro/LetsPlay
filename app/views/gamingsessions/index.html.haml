@@ -1,0 +1,43 @@
+%h1 Listing gamingsessions
+
+%table
+  %tr
+    %th Title
+    %th Created by
+    %th Online
+    %th Min age limit
+    %th Max age limit
+    %th Description
+    %th Gsdate
+    %th Active
+    %th Location name
+    %th Postcode
+    %th Console id1
+    %th Console id2
+    %th Console id3
+    %th
+    %th
+    %th
+
+  - @gamingsessions.each do |gamingsession|
+    %tr
+      %td= gamingsession.title
+      %td= gamingsession.created_by
+      %td= gamingsession.online
+      %td= gamingsession.min_age_limit
+      %td= gamingsession.max_age_limit
+      %td= gamingsession.description
+      %td= gamingsession.gsdate
+      %td= gamingsession.active
+      %td= gamingsession.location_name
+      %td= gamingsession.postcode
+      %td= gamingsession.console_id1
+      %td= gamingsession.console_id2
+      %td= gamingsession.console_id3
+      %td= link_to 'Show', gamingsession
+      %td= link_to 'Edit', edit_gamingsession_path(gamingsession)
+      %td= link_to 'Destroy', gamingsession, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Gamingsession', new_gamingsession_path

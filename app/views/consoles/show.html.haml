@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @console.name
+%p
+  %b Console image:
+  = @console.console_image
+%p
+  %b Console logo:
+  = @console.console_logo
+
+= link_to 'Edit', edit_console_path(@console)
+\|
+= link_to 'Back', consoles_path

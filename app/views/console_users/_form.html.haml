@@ -1,0 +1,19 @@
+= form_for @console_user do |f|
+  - if @console_user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@console_user.errors.count, "error")} prohibited this console_user from being saved:"
+      %ul
+        - @console_user.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :user_id
+    = f.number_field :user_id
+  .field
+    = f.label :console_id
+    = f.number_field :console_id
+  .field
+    = f.label :gamer_tag
+    = f.text_field :gamer_tag
+  .actions
+    = f.submit 'Save'
