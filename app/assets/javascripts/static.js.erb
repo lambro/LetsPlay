@@ -1,16 +1,1 @@
-app = angular.module('letsPlayApp', ['ngAnimate', 'ngRoute']);
-  app.config(function($routeProvider, $locationProvider){
-    $routeProvider.when('/', {
-      controller: 'HomeController',
-      templateUrl: "<%= asset_path('home.html') %>"
-    });
-
-    $routeProvider.when('/consoles', {
-      controller: 'HomeController',
-      templateUrl: "<%= asset_path('consoles.html') %>"
-    });
-
-    $routeProvider.otherwise({
-      redirectTo: '/'
-    })
-  });
+var app = angular.module('letsPlayApp', ['ngAnimate', 'ngRoute']);

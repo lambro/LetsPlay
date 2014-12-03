@@ -1,0 +1,51 @@
+app.config(function($routeProvider, $locationProvider){
+  $routeProvider.when('/', {
+    controller: 'HomeController',
+    templateUrl: "<%= asset_path('home.html') %>"
+  });
+
+  $routeProvider.when('/consoles', {
+    controller: 'HomeController',
+    templateUrl: "<%= asset_path('consoles.html') %>"
+  });
+
+  $routeProvider.when('/gsessions', {
+    controller: 'HomeController',
+    templateUrl: "<%= asset_path('gsessions.html') %>"
+  });
+
+  $routeProvider.when('/friends', {
+    controller: 'HomeController',
+    templateUrl: "<%= asset_path('friends.html') %>"
+  });
+
+  $routeProvider.when('/groups', {
+    controller: 'HomeController',
+    templateUrl: "<%= asset_path('groups.html') %>"
+  });
+
+  $routeProvider.when('/forum', {
+    controller: 'HomeController',
+    templateUrl: "<%= asset_path('forum.html') %>"
+  });
+
+  $routeProvider.when('/games', {
+    controller: 'HomeController',
+    templateUrl: "<%= asset_path('games.html') %>"
+  });
+
+  $routeProvider.when('/mysessions', {
+    controller: 'HomeController',
+    templateUrl: "<%= asset_path('mysessions.html') %>"
+  });
+
+  $routeProvider.when('/myprofile', {
+    controller: 'HomeController',
+    templateUrl: "<%= asset_path('myprofile.html') %>"
+  });
+
+  $routeProvider.otherwise({
+    redirectTo: '/'
+  })
+  
+});

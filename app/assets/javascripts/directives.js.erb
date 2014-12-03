@@ -1,0 +1,23 @@
+app.directive('mainHeader', function(){
+  return{
+    restrict: 'E',
+    replace: true,
+    templateUrl: "<%= asset_path('main-header.html') %>"
+  };
+});
+
+app.directive('mainFooter', function(){
+  return{
+    restrict: 'E',
+    replace: true,
+    templateUrl: "<%= asset_path('main-footer.html') %>"
+  };
+});
+
+app.directive('navBar', function(){
+  return{
+    restrict: 'E',
+    replace: true,
+    templateUrl: "<%= asset_path('nav-bar.html') %>"
+  };
+});

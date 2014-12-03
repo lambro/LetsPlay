@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="letsPlayApp">
+<html lang="en" ng-app="letsPlayApp">
 <head>
   <title>LetsPlay</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular-route.min.js"></script>
@@ -8,22 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="mainpage" id="mainPage">
-    <h1 id="letsplay">Lets Play</h1>
-    <h1 id="letsplaymini">Lets Play</h1>
-
-    <nav class="main-nav">
-      <a href="#">Gaming Sessions</a>
-      <a href="#">Friends</a>
-      <a href="#">Groups</a>
-      <a href="#">Forum</a>
-      <a href="#">Games</a>
-      <a href="#">Console</a> |
-      <a href="#">My Gaming Sessions</a>
-      <a href="#">My Profile</a>
-    </nav>
-  </header>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <main-header></main-header>
+  <nav-bar></nav-bar>
   <div ng-view></div>
-
+  <main-footer></main-footer>
 </body>
 </html>
