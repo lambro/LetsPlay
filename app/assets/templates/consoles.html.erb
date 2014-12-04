@@ -1,32 +1,12 @@
 <main-header></main-header>
-{{current_user}}
+{{current_user.name}}
 <nav-bar></nav-bar>
 
 <h1>Console Page</h1>
 
-<form ng-show="edit" name="consoleForm" ng-submit="consoleForm.$valid && addConsole()" novalidate>
-  <div>
-    <label for="name">Name</label>
-    <input required type="text" ng-model="newConsole.name">
-  </div>
-  <div>
-    <label>Price</label>
-    <input type="number" ng-model="newStall.price" min="1" max="10" required>
-  </div>
-  <div>
-    <label>Description</label>
-    <textarea ng-model="newConsole.description"></textarea>
-  </div>
-  <input type="submit">
-</form>
-
-<!-- --------- -->
-
 <div>
   <input ng-model="search" type="search">
-  <ul>
-    <li ng-click="selectConsole(console)" ng-repeat="console in consoles | filter: {name: search} | orderBy: 'name'" ng-class="{highlighted: console === selectedConsole}">
+    <div ng-click="selectConsole(console)" ng-repeat="console in consoles | filter: {name: search} | orderBy: 'name'" ng-class="{highlighted: console === selectedConsole}">
       <a href="/#/console/{{ console.id }}">{{ console.name }}</a>
-    </li>
-  </ul>
+    </div>
 </div>

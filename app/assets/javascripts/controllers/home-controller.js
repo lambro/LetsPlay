@@ -21,14 +21,6 @@ app.controller('HomeController', function($scope, $http){
     $scope.gamingsessions = data;
   });
 
-  $scope.enterDeets = function(){
-   if($scope.deets == true){
-    $scope.deets = false;
-   }else{
-    $scope.deets = true;
-   }
-  };
-
   // $scope.addStall = function(){
   //   $http.post('/stalls.json', {stall: $scope.newStall}).success(function(stall){
   //     $scope.stalls.push(stall);

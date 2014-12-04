@@ -23,4 +23,5 @@ c11 = Console.create(name: "Xbox 360", console_image: "rails.png", console_logo:
 c12 = Console.create(name: "Xbox One", console_image: "rails.png", console_logo: "rails.png")
 c13 = Console.create(name: "Nintendo 3DS", console_image: "rails.png", console_logo: "rails.png")
 
-g1 = Game.create(title: "Final Fantasy 10", image: "ff10.jpeg", genre: "JRPG")
+g1 = Game.create(title: "Final Fantasy 10", image: "ff10.jpeg", genre: "JRPG", console_id: c1.id)
+

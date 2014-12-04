@@ -1,5 +1,14 @@
+// utilities
+// font-family: 'Khand', sans-serif;
+// font-family: 'Lato', sans-serif;
+// font-family: 'Quicksand', sans-serif;
+// font-family: 'Inconsolata';
+// font-family: 'Gruppo', cursive;
+// font-family: 'Amatic SC', cursive;
+
 *{
   box-sizing:border-box;
+  font-family: 'Khand', sans-serif;
 }
 
 a{
@@ -7,6 +16,8 @@ a{
   text-decoration:none;
 }a:visited{
   color:white;
+}a:hover{
+  color:red;
 }
 
 body
@@ -36,6 +47,15 @@ body
     position:fixed;
     top:70%;
     left:50%;
+    letter-spacing: 1.5px;
+  }
+  .signup{
+    top:75%;
+    left:50%;
+  }
+  .login{
+    top:75%;
+    left:40%;
   }
   .fa-gamepad{
     height:40px;
@@ -61,29 +81,6 @@ body
       margin-left: 2%;
     }
   }
-}
-
-input.ng-enter,
-input.ng-leave
-{
-    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    position: relative;
-    display: block;
-}
-
-input.ng-leave.ng-leave-active,
-input.ng-enter {
-  opacity: 0;
-    top: -50px;
-    height: 0px;
-
-}
-
-input.ng-enter.ng-enter-active,
-input.ng-leave {
-   opacity: 1;
-    top: 0;
-    height: 30px;
 }
 
 .background{
@@ -124,6 +121,9 @@ footer{
   text-align:center;
 }
 
+.field{
+  display:inline-block;
+}
 
 
 
