@@ -6,7 +6,7 @@ class ConsolesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @consoles }
+      format.json { render json: @consoles, include: :games }
     end
   end
 

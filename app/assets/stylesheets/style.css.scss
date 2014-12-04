@@ -2,19 +2,128 @@
   box-sizing:border-box;
 }
 
+a{
+  color:white;
+  text-decoration:none;
+}a:visited{
+  color:white;
+}
+
+body
+{
+  padding-bottom:100px;
+  background:black;
+  color:white;
+}
+
 #letsplay{
   // put styles that will apply to the main page header here. this will only be seen on the welcome page.
 }
 
 #letsplaymini{
-  // these styles will apply to the mini version of the main page header that will be seen on all other pagees in the site
+  // these styles will apply to the mini version of the main page header that will be seen on all other pages in the site
   display:none;
+}
+
+.homecontainer{
+  text-align:center;
+  h1{
+    margin:2%;
+    letter-spacing: 2px;
+  }
+  .signup, .login{
+    font-size:2rem;
+    position:fixed;
+    top:70%;
+    left:50%;
+  }
+  .fa-gamepad{
+    height:40px;
+    font-size:3em;
+    display:inline;
+    line-height:40px;
+    vertical-align: center;
+    width: 100%;
+    text-align:center;
+    input{
+      height:30px;
+      margin:5px;
+      vertical-align: top;
+      border:none;
+      border-radius:5px;
+      transition: 0.2s all ;
+    }
+
+    p{
+      display:inline;
+      vertical-align: center;
+      font-size:2rem;
+      margin-left: 2%;
+    }
+  }
+}
+
+input.ng-enter,
+input.ng-leave
+{
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+}
+
+input.ng-leave.ng-leave-active,
+input.ng-enter {
+  opacity: 0;
+    top: -50px;
+    height: 0px;
+
+}
+
+input.ng-enter.ng-enter-active,
+input.ng-leave {
+   opacity: 1;
+    top: 0;
+    height: 30px;
+}
+
+.background{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:-100;
+  -webkit-transform: scaleX(-1);
 }
 
 footer{
   position:fixed;
   bottom:0;
   width:100%;
-  height:50px;
+  height:30px;
   border-top:solid 1px black;
+  background: white;
+  line-height:30px;
+  padding:0;
+  margin-bottom: 1%;
+  background:black;
+  text-align:center;
+  a{
+    display:inline-block;
+    font-size:2em;
+  }
+  p{
+    color:white;
+    vertical-align: center;
+    margin:0;
+    display:inline-block;
+    font-size: 0.5em;
+  }
 }
+
+.hometitle{
+  text-align:center;
+}
+
+
+
+

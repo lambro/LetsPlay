@@ -7,11 +7,9 @@ gem 'rails', '3.2.19'
 
 gem 'pg'
 gem 'angularjs-rails'
-gem "devise"
-gem "omniauth-google-oauth2"
-gem "omniauth-facebook"
-gem "omniauth-twitter"
 gem 'steam-condenser'
+gem 'angular_rails_csrf'
+gem 'devise'
 gem "letter_opener", :group => :development
 
 group :development, :test do

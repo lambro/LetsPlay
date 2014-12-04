@@ -1,0 +1,27 @@
+<main-header></main-header>
+<nav-bar></nav-bar>
+
+<section>
+  <h2>Selected Console Details</h2>
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td ng-hide="editConsole">{{console.name }}</td>
+      <td ng-show="editConsole"><input ng-model="editConsole.name" /></td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td ng-hide="editConsole"> {{console.price}}</td>
+      <td ng-show="editConsole"><input ng-model="editConsole.price" /></td>
+    </tr>
+    <tr>
+      <td>Description:</td>
+      <td ng-hide="editConsole"> {{console.description}}</td>
+      <td ng-show="editConsole"><textarea ng-model="editConsole.description"></textarea></td>
+    </tr>
+  </table>
+  <div console-tabs></div>
+  <button ng-click="deleteConsole(console)">Delete Console</button>
+  <button ng-hide="editConsole" ng-click="setEditConsole(console)">Edit Console</button>
+  <button ng-show="editConsole" ng-click="updateConsole(editConsole)">Update Console</button>
+</section> 

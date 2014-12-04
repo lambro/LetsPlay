@@ -3,6 +3,8 @@
 <head>
   <title>LetsPlay</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular-route.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <base href="/">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,9 +12,37 @@
 <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <main-header></main-header>
-  <nav-bar></nav-bar>
+
+  <div class="user-nav">
+    <% if user_signed_in? %>
+      Logged in as
+      <b>
+        <%= current_user.email %>
+      </b>
+      <%= link_to 'Edit Profile', edit_user_registration_path, target: "_self" %>
+      <%= link_to 'Logout',  destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= image_tag "controllercollage.jpg", class: "homepage background" %>
+    <% end %>
+  </div>
+
+  <% if !user_signed_in? %>
+  <div class="homecontainer">
+  <%= link_to 'Sign up', new_user_registration_path, target: "_self", class: "signup homepage" %>
+  <%= link_to 'Login', new_user_session_path, target: "_self", class: "login homepage" %>
+  </div>
+  <% end %>
+
+  <% if user_signed_in? %>
   <div ng-view></div>
+  <% end %>
+
   <main-footer></main-footer>
+  <%= yield %>
+
+  <%= javascript_tag do %>
+    var currentUser = <%= raw current_user.to_json %>;
+  <% end %>
+
 </body>
 </html>

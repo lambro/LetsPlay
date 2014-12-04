@@ -1,7 +1,7 @@
 app.config(function($routeProvider, $locationProvider){
   $routeProvider.when('/', {
     controller: 'HomeController',
-    templateUrl: "<%= asset_path('home.html') %>"
+    templateUrl: "<%= asset_path('home.html.erb') %>"
   });
 
   $routeProvider.when('/consoles', {
@@ -44,8 +44,20 @@ app.config(function($routeProvider, $locationProvider){
     templateUrl: "<%= asset_path('myprofile.html') %>"
   });
 
+  $routeProvider.when('/users/login', {
+    controller: 'HomeController'
+  });
+
+  $routeProvider.when('/users/sign_up', {
+    controller: 'HomeController'
+  });
+
+  $routeProvider.when('/users/edit', {
+    controller: 'HomeController'
+  });
+
+  $locationProvider.html5Mode(true);
   $routeProvider.otherwise({
     redirectTo: '/'
   })
-  
 });
