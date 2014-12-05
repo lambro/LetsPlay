@@ -11,6 +11,8 @@ gem 'steam-condenser'
 gem 'angular_rails_csrf'
 gem 'devise'
 gem "letter_opener", :group => :development
+gem 'forem', :github => "radar/forem", :branch => "rails3"
+gem 'kaminari', '0.15.1'
 
 group :development, :test do
   gem 'pry-rails'
