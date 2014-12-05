@@ -16,5 +16,6 @@
 //= require angular-animate
 //= require angular-route
 //= require static
+//= require forem
 //= require routes
 //= require_tree .
