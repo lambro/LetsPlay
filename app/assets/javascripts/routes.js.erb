@@ -56,6 +56,11 @@ app.config(function($routeProvider, $locationProvider){
     controller: 'HomeController'
   });
 
+  $routeProvider.when('/consoles/:id', {
+    controller: 'HomeController',
+    templateUrl: "<%= asset_path('console.html') %>"
+  });
+
   $locationProvider.html5Mode(true);
   $routeProvider.otherwise({
     redirectTo: '/'

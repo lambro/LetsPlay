@@ -23,5 +23,14 @@ c11 = Console.create(name: "Xbox 360", console_image: "rails.png", console_logo:
 c12 = Console.create(name: "Xbox One", console_image: "rails.png", console_logo: "rails.png")
 c13 = Console.create(name: "Nintendo 3DS", console_image: "rails.png", console_logo: "rails.png")
 
-g1 = Game.create(title: "Final Fantasy 10", image: "ff10.jpeg", genre: "JRPG", console_id: c1.id)
+g1 = Game.create(title: "Final Fantasy 10", image: "ff10.jpeg", genre: "JRPG", console_id: c2.id)
+
+g2 = Game.create(title: "GTA V", image: "ff10.jpeg", genre: "Action", console_id: c3.id)
+
+g3 = Game.create(title: "Assassins Creed Unity", image: "ff10.jpeg", genre: "Action", console_id: c4.id)
+g4 = Game.create(title: "Mass Effect 3", image: "ff10.jpeg", genre: "Action / Drama", console_id: c3.id)
+g5 = Game.create(title: "Fifa 14", image: "ff10.jpeg", genre: "Sports", console_id: c4.id)
+g6 = Game.create(title: "Batman: Arkham Origins", image: "ff10.jpeg", genre: "Action", console_id: c4.id)
+g7 = Game.create(title: "Infamous Second Son", image: "ff10.jpeg", genre: "Action", console_id: c4.id)
+g8 = Game.create(title: "Alien Isolation", image: "ff10.jpeg", genre: "Horror", console_id: c4.id)
 

@@ -100,8 +100,7 @@ footer{
   border-top:solid 1px black;
   background: white;
   line-height:30px;
-  padding:0;
-  margin-bottom: 1%;
+  padding-bottom:1%;
   background:black;
   text-align:center;
   a{
@@ -125,5 +124,20 @@ footer{
   display:inline-block;
 }
 
+.each_console{
+  height: 500px;
+  width:400px;
+  display:inline-block;
+  margin:5%;
+  position:relative;
+  .console_image{
+    height:400px;
+    width:400px;
+  }
+  .console_name{
+    position: relative;
+    display:inline-block;
+  }
+}
 
 
