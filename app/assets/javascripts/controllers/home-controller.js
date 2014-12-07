@@ -17,6 +17,8 @@ app.controller('HomeController', function($scope, $http){
     $scope.groups = data;
   });
 
+  $scope.currentUser = currentUser
+
   $http.get('/gamingsessions.json').success(function(data){
     $scope.gamingsessions = data;
   });

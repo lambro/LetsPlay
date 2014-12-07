@@ -3,6 +3,7 @@
 <head>
   <title>LetsPlay</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular-route.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <base href="/">
   <link href='http://fonts.googleapis.com/css?family=Khand:300,400|Lato:300,400|Quicksand|Inconsolata|Gruppo|Amatic+SC' rel='stylesheet' type='text/css'>
@@ -11,9 +12,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <% if !user_signed_in? %>
   <div class="homecontainer">
   <%= image_tag "controllercollage.jpg", class: "homepage background" %>
@@ -23,6 +21,24 @@
   <% end %>
 
   <% if user_signed_in? %>
+  <nav class="main-nav">
+    <div>
+    Logged in as
+    <b>
+    <%= current_user.name %>
+    </b>
+    <a href="/#/mysessions">My Gaming Sessions</a>
+    <a href="/#/users/<%= current_user.id %>">My Profile</a>
+    <a href="/#/home">Home</a>
+    <%= link_to 'log out', destroy_user_session_path, target: "_self", method: :delete, class: "login homepage" %>
+    </div>
+    <div><a href="/#/gsessions">Gaming Sessions</a></div>
+    <div><a href="/#/friends">Friends</a></div>
+    <div><a href="/#/groups">Groups</a></div>
+    <div><a href="/#/forum">Forum</a></div>
+    <div><a href="/#/games">Games</a></div>
+    <div><a href="/#/consoles">Consoles</a></div>    
+  </nav>
   <div ng-view></div>
   <% end %>
 
