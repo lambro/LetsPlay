@@ -22,22 +22,27 @@
 
   <% if user_signed_in? %>
   <nav class="main-nav">
-    <div>
+    <div id="show">SHOW MINI MENU</div>
+    <div id="hide">HIDE</div>
+    <div class="sidebaritem1" id="sbar1">
     Logged in as
     <b>
-    <%= current_user.name %>
-    </b>
-    <a href="/#/mysessions">My Gaming Sessions</a>
-    <a href="/#/users/<%= current_user.id %>">My Profile</a>
-    <a href="/#/home">Home</a>
-    <%= link_to 'log out', destroy_user_session_path, target: "_self", method: :delete, class: "login homepage" %>
+    <%= current_user.name %><br>
+    <%= image_tag "#{current_user.profile_picture}" %>
+    </b><br>
+    <a href="/#/mysessions">My Gaming Sessions</a><br>
+    <a href="/#/users/<%= current_user.id %>">My Profile</a><br>
+    <a href="/#/home">Home</a><br>
+    <%= link_to 'log out', destroy_user_session_path, target: "_self", method: :delete, class: "login homepage" %><br>
+    <i class="fa fa-bars" id="menutoggle"></i>
     </div>
-    <div><a href="/#/gsessions">Gaming Sessions</a></div>
-    <div><a href="/#/friends">Friends</a></div>
-    <div><a href="/#/groups">Groups</a></div>
-    <div><a href="/#/forum">Forum</a></div>
-    <div><a href="/#/games">Games</a></div>
-    <div><a href="/#/consoles">Consoles</a></div>    
+    <div class="sidebaritem" id="sbar7"><i class="fa fa-bars" id="menutoggle"></i></div>
+    <div class="sidebaritem" id="sbar2"><a href="/#/gsessions">Gaming Sessions</a></div>
+    <!-- <div class="sidebaritem"><a href="/#/friends">Friends</a></div> -->
+    <div class="sidebaritem" id="sbar3"><a href="/#/groups">Groups</a></div>
+    <div class="sidebaritem" id="sbar4"><a href="/#/forum">Forum</a></div>
+    <div class="sidebaritem" id="sbar5"><a href="/#/games">Games</a></div>
+    <div class="sidebaritem" id="sbar6"><a href="/#/consoles">Consoles</a></div>    
   </nav>
   <div ng-view></div>
   <% end %>

@@ -17,5 +17,6 @@
 //= require angular-route
 //= require static
 //= require forem
+//= require navscript
 //= require routes
 //= require_tree .
