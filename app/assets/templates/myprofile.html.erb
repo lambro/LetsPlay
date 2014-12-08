@@ -5,7 +5,6 @@
   <p> {{ currentUser.email }} </p>
   <img class="user_image" src="/assets/{{currentUser.profile_picture}}"></a>
   <h2 ng-repeat="currentUser.console in consoles | orderBy: 'name'"> {{ console.name}}</h2><br>
-  <a href="/letsplay/users/edit">Edit</a> |
   <a href="/letsplay/home">Home</a>
 
   <p>{{currentUser}}</p>
