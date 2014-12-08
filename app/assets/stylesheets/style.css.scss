@@ -9,6 +9,7 @@
 *{
   box-sizing:border-box;
   font-family: 'Khand', sans-serif;
+  letter-spacing: 1.5px;
 }
 
 a{
@@ -27,8 +28,22 @@ body
   color:white;
 }
 
-#letsplay{
-  // put styles that will apply to the main page header here. this will only be seen on the welcome page.
+#mainPage{
+  width:105%;
+  text-align:center;
+  font-size: 3rem;
+  background:rgba(0, 0, 0, 0.7);
+  margin-left:-20px;
+  position: fixed;
+  top:20px;
+  padding-left:10px;
+  padding-right:30px;
+  display: block;
+  vertical-align: middle;
+  #letsplay{
+  font-family: 'Gruppo', cursive;
+  -webkit-animation: rotate 10s alternate infinite;
+  }
 }
 
 #letsplaymini{
@@ -73,7 +88,6 @@ body
       border-radius:5px;
       transition: 0.2s all ;
     }
-
     p{
       display:inline;
       vertical-align: center;
@@ -83,13 +97,26 @@ body
   }
 }
 
-.background{
+.hm-background{
   position:fixed;
   top:0;
   left:0;
   width:100%;
   z-index:-100;
   -webkit-transform: scaleX(-1);
+}
+
+// .tint{
+//   background-color:rgba(211, 53, 130, 1.0);
+//   -webkit-animation: rotate 2s;
+// }
+
+.background{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:-100;
 }
 
 footer{
@@ -142,6 +169,7 @@ footer{
   }
 }
 
+
 .main-nav{
   text-align: center;
   position:fixed;
@@ -150,8 +178,19 @@ footer{
   height:100%;
   padding-bottom:30px;
   width:15%;
+  z-index:1000;
+  #show{
+    cursor:pointer;
+    &:hover{
+      color:red;
+    }
+  }
   #hide{
     display:none;
+    cursor: pointer;
+    &:hover{
+      color:red;
+    }
   }
   #sbar2, #sbar3, #sbar4, #sbar5, #sbar6, #sbar7 {
     display:none;
@@ -159,12 +198,37 @@ footer{
       font-size:2em;
     }
   }
+
+  #sbar6{
+    background-color:rgba(119, 4, 4, 1.0);
+  }
+  #sbar5{
+    background-color:rgba(158, 5, 5, 1.0);
+  }
+  #sbar4{
+    background-color:rgba(178, 6, 6, 1.0);
+  }
+  #sbar3{
+    background-color:rgba(198, 6, 6, 1.0);
+  }
+  #sbar2{
+    background-color:rgba(218, 7, 7, 1.0);
+  }
+  #sbar7{
+    background-color:rgba(237, 7, 7, 1.0);
+  }
+
   .sidebaritem1{
     height:40%;
     background:orange;
     display:block;
     border-radius:5px;
     display:none;
+    a:hover{
+      background: transparent;
+      color:red;
+      font-weight:bold;
+    }
     .fa-bars{
       font-size:2.5em;
     }
@@ -181,7 +245,47 @@ footer{
     vertical-align: center;
     border:1px solid black;
     border-radius:5px;
+    a:hover{
+      background: transparent;
+      color:black;
+      font-weight:bold;
+    }
   }
 }
 
+.user_image{
+  border-radius: 10px;
+}
 
+.container_user{
+  width:60%;
+  background:black;
+  border: 5px solid yellow;
+  border-radius: 10px;
+  margin: 200px auto;
+  text-align: center;
+}
+
+
+// ------------- animations -------------- //
+
+// these are supposed to be the colors of the consoles blue and green.. reminder to myself reevaluate use of red here
+
+@-webkit-keyframes rotate {
+  0% { color: #0A59AE}
+  6% { color: #1881F2}
+  13% { color: #3E96F4}
+  19% { color: #B2D5FB}
+  25.6% { color: #FFFFFF}
+  32.2% { color: #FE9A9A}
+  38.8% { color: #FD5D5D}
+  45.4% { color: #FD2121}
+  52% { color: #DE0202}
+  58% { color: #FD5D5D}
+  64.5% { color: #FE9A9A}
+  71% { color: #FFFFFF}
+  77% { color: #DEFBDA}
+  83% { color: #8DF27D}
+  89% { color: #4BEB33}
+  100% { color: #29BA12}
+}

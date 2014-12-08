@@ -14,7 +14,7 @@
 <body>
   <% if !user_signed_in? %>
   <div class="homecontainer">
-  <%= image_tag "controllercollage.jpg", class: "homepage background" %>
+  <%= image_tag "controllercollage.jpg", class: "homepage hm-background", id: "hmBackground" %>
   <%= link_to 'Sign up', new_user_registration_path, target: "_self", class: "signup homepage" %>
   <%= link_to 'Login', new_user_session_path, target: "_self", class: "login homepage" %>
   </div>

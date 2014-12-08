@@ -15,4 +15,8 @@ $(function(){
   $("#hide, #show").on('click', function(){
     $("#show, #hide, #sbar1").slideToggle();
   });
+
+  // $('#hmBackground').each(function() {
+  //     $(this).wrap('<div class="tint"></div>');
+  //   });
 })
