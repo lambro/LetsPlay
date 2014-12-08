@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all.to_json( :include => { :consoleUsers })
+    @users = User
 
     respond_to do |format|
       format.html # index.html.erb
