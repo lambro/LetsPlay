@@ -1,12 +1,13 @@
-<main-header></main-header>
-
 <div class="container_user">
   <h1>My Profile</h1>
   <%= image_tag "myprofile1.jpg", class: "homepage background" %>
   <h1> {{ currentUser.name }} </h1>
   <p> {{ currentUser.email }} </p>
-  <img class="user_image" src="assets/{{currentUser.profile_picture}}"></a>
+  <img class="user_image" src="/assets/{{currentUser.profile_picture}}"></a>
   <h2 ng-repeat="currentUser.console in consoles | orderBy: 'name'"> {{ console.name}}</h2><br>
-  <a href="/users/edit">Edit</a> |
-  <a href="/">Home</a>
+  <a href="/letsplay/users/edit">Edit</a> |
+  <a href="/letsplay/home">Home</a>
+
+  <p>{{currentUser}}</p>
 </div>
+

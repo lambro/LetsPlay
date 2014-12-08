@@ -9,6 +9,8 @@ LetsPlay::Application.routes.draw do
 
   devise_for :users
 
+  get "/letsplay/*path" => "static#index"
+
   resources :friendships
 
 

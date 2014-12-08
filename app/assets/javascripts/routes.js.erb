@@ -1,5 +1,5 @@
 app.config(function($routeProvider, $locationProvider){
-  $routeProvider.when('/', {
+  $routeProvider.when('/home', {
     controller: 'HomeController',
     templateUrl: "<%= asset_path('home.html.erb') %>"
   });
@@ -63,6 +63,6 @@ app.config(function($routeProvider, $locationProvider){
 
   $locationProvider.html5Mode(true);
   $routeProvider.otherwise({
-    redirectTo: '/'
+    redirectTo: '/home'
   })
 });

@@ -1,0 +1,12 @@
+<%= image_tag "games_list.jpg", class: "homepage background" %>
+<div class="container_games">
+<h1>Games</h1>
+
+<div>
+  <input ng-model="search" type="search">
+    <div ng-click="selectGame(game)" ng-repeat="game in games | filter: {name: search} | orderBy: 'name'" class="eachgame">
+      <a href="game/{{ game.id }}"><p>{{ game.title }}</p> | {{ game.genre }} <br>
+      <img class="game_image" src="/assets/{{game.image}}"></a>
+    </div>
+</div>
+</div>

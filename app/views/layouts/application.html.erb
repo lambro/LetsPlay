@@ -2,10 +2,12 @@
 <html lang="en" ng-app="letsPlayApp">
 <head>
   <title>LetsPlay</title>
+  <base href="/letsplay/">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular-route.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <%= javascript_include_tag "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <base href="/">
   <link href='http://fonts.googleapis.com/css?family=Khand:300,400|Lato:300,400|Quicksand|Inconsolata|Gruppo|Amatic+SC' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -30,25 +32,50 @@
     <%= current_user.name %><br>
     <%= image_tag "#{current_user.profile_picture}" %>
     </b><br>
-    <a href="/#/mysessions">My Gaming Sessions</a><br>
-    <a href="/#/users/<%= current_user.id %>">My Profile</a><br>
-    <a href="/#/home">Home</a><br>
+    <a href="/letsplay/mysessions">My Gaming Sessions</a><br>
+    <a href="/letsplay/users/<%= current_user.id %>">My Profile</a><br>
+    <a href="/letsplay/home">Home</a><br>
     <%= link_to 'log out', destroy_user_session_path, target: "_self", method: :delete, class: "login homepage" %><br>
+
+    <i class="fa fa-cog" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"></i>
+
     <i class="fa fa-bars" id="menutoggle"></i>
     </div>
     <div class="sidebaritem" id="sbar7"><i class="fa fa-bars" id="menutoggle"></i></div>
-    <div class="sidebaritem" id="sbar2"><a href="/#/gsessions">Gaming Sessions</a></div>
+    <div class="sidebaritem" id="sbar2"><a href="/letsplay/gsessions">Gaming Sessions</a></div>
     <!-- <div class="sidebaritem"><a href="/#/friends">Friends</a></div> -->
-    <div class="sidebaritem" id="sbar3"><a href="/#/groups">Groups</a></div>
-    <div class="sidebaritem" id="sbar4"><a href="/#/forum">Forum</a></div>
-    <div class="sidebaritem" id="sbar5"><a href="/#/games">Games</a></div>
-    <div class="sidebaritem" id="sbar6"><a href="/#/consoles">Consoles</a></div>    
+    <div class="sidebaritem" id="sbar3"><a href="/letsplay/groups">Groups</a></div>
+    <div class="sidebaritem" id="sbar4"><a href="/letsplay/forum">Forum</a></div>
+    <div class="sidebaritem" id="sbar5"><a href="/letsplay/games">Games</a></div>
+    <div class="sidebaritem" id="sbar6"><a href="/letsplay/consoles">Consoles</a></div>    
   </nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h2 class="modal-title" id="myModalLabel">Edit your profile : <%= current_user.name %> </h2>
+        </div>
+        <div class="modal-body">
+          <%= render 'devise/registrations/edit' %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= yield %>
   <div ng-view></div>
+ 
   <% end %>
 
   <main-footer></main-footer>
-  <%= yield %>
+
 
   <%= javascript_tag do %>
     var currentUser = <%= raw current_user.to_json %>;
