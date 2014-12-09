@@ -23,6 +23,13 @@ app.controller('HomeController', function($scope, $http){
     $scope.gamingsessions = data;
   });
 
+  $http.get('/console_users.json').success(function(data){
+      console.log(data);
+      $scope.console_users = data;
+     
+    });
+
+
   // $scope.addStall = function(){
   //   $http.post('/stalls.json', {stall: $scope.newStall}).success(function(stall){
   //     $scope.stalls.push(stall);

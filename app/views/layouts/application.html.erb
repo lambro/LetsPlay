@@ -68,17 +68,23 @@
       </div>
     </div>
   </div>
-
-  <%= yield %>
   <div ng-view></div>
  
   <% end %>
+  <%= yield %>
 
   <main-footer></main-footer>
 
-
   <%= javascript_tag do %>
-    var currentUser = <%= raw current_user.to_json %>;
+  var currentUser = <%= raw current_user.to_json %>;
   <% end %>
+
+  <% if user_signed_in? %>
+  <%= javascript_tag do %>
+  currentUser.currentUserConsoles = <%= raw current_user.consoles.to_json %>;
+  currentUser.currentUserConsoleUsers = <%= raw current_user.consoles_users.to_json %>;
+  <%end%>
+  <%end%>
+
 </body>
 </html>

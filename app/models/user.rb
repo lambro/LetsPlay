@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :friendships, class_name: "Friendships"
   has_many :consoles_users, class_name: "ConsolesUsers"
   has_many :users, through: :friendships
-  has_many :consoles, through: :console_users
+  has_many :consoles, through: :consoles_users
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :dob, :postcode, :profile_picture, :forem_admin

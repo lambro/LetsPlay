@@ -2,11 +2,11 @@ class ConsoleUsersController < ApplicationController
   # GET /console_users
   # GET /console_users.json
   def index
-    @console_users = ConsoleUser.all
-
+    # @console_users = ConsoleUser.all
+    @console_users = current_user.consoles_users
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @console_users }
+      format.json { render json: @console_users, include: :console }
     end
   end
 

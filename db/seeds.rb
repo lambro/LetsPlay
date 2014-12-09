@@ -28,6 +28,8 @@ c11 = Console.create(name: "Xbox 360", console_image: "xbox360.jpg", console_log
 c12 = Console.create(name: "Xbox One", console_image: "xbone.jpg", console_logo: "rails.png")
 
 cu1 = ConsolesUsers.create(user_id: 1, console_id: 1, gamer_tag: "LambXJapan")
+cu2 = ConsolesUsers.create(user_id: 1, console_id: 2, gamer_tag: "LambXJapan")
+cu3 = ConsolesUsers.create(user_id: 1, console_id: 3, gamer_tag: "LambXJapan")
 
 g1 = Game.create(title: "Final Fantasy 10", image: "ff10.jpeg", genre: "JRPG", console_id: c2.id)
 g2 = Game.create(title: "GTA V", image: "gta5.jpg", genre: "Action", console_id: c3.id)

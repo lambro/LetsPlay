@@ -1,12 +1,9 @@
 <div class="container_user">
-  <h1>My Profile</h1>
   <%= image_tag "myprofile1.jpg", class: "homepage background" %>
   <h1> {{ currentUser.name }} </h1>
   <p> {{ currentUser.email }} </p>
   <img class="user_image" src="/assets/{{currentUser.profile_picture}}"></a>
-  <h2 ng-repeat="currentUser.console in consoles | orderBy: 'name'"> {{ console.name}}</h2><br>
-  <a href="/letsplay/home">Home</a>
+  <h2>My Consoles :</h2>
+  <h2 ng-repeat="console_user in console_users | orderBy: 'name'"> {{ console_user.console.name}} | {{console_user.gamer_tag}} </h2><br>
 
-  <p>{{currentUser}}</p>
 </div>
-
