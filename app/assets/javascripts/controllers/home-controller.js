@@ -1,4 +1,4 @@
-app.controller('HomeController', function($scope, $http){
+app.controller('HomeController', function($scope, $routeParams, $http){
   $scope.current_user = currentUser
 
   $http.get('/consoles.json').success(function(data){
@@ -19,15 +19,10 @@ app.controller('HomeController', function($scope, $http){
 
   $scope.currentUser = currentUser
 
-  $http.get('/gamingsessions.json').success(function(data){
-    $scope.gamingsessions = data;
-  });
-
   $http.get('/console_users.json').success(function(data){
       console.log(data);
       $scope.console_users = data;
-     
-    });
+  });
 
 
   // $scope.addStall = function(){

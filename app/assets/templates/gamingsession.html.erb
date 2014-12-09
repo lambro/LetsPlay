@@ -1,0 +1,63 @@
+<p id="notice">
+
+  TEST 
+  <%#= notice %>
+</p>
+
+{{gamingsession}}
+
+<p>
+  <b>Title:</b>
+  {{gamingsession.title}}
+</p>
+<p>
+  <b>Created by:</b>
+  {{gamingsession.created_by}}
+</p>
+<p>
+  <b>Online:</b>
+  {{gamingsession.online}}
+</p>
+<p>
+  <b>Min age limit:</b>
+  {{gamingsession.min_age_limit}}
+</p>
+<p>
+  <b>Max age limit:</b>
+  {{gamingsession.max_age_limit}}
+</p>
+<p>
+  <b>Description:</b>
+  {{gamingsession.description}}
+</p>
+<p>
+  <b>Gsdate:</b>
+  {{gamingsession.gsdate}}
+</p>
+<p>
+  <b>Active:</b>
+  {{gamingsession.active}}
+</p>
+<p>
+  <b>Location name:</b>
+  {{gamingsession.location_name}}
+</p>
+<p>
+  <b>Postcode:</b>
+  {{gamingsession.postcode}}
+</p>
+<p>
+  <b>Console id1:</b>
+  {{gamingsession.console_id1}}
+</p>
+<p>
+  <b>Console id2:</b>
+  {{gamingsession.console_id2}}
+</p>
+<p>
+  <b>Console id3:</b>
+ {{gamingsession.console_id3}}
+</p>
+<%#= link_to 'Edit', edit_gamingsession_path(@gamingsession) %>
+\|
+<%#= link_to 'Back', gamingsessions_path %>

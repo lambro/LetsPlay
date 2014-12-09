@@ -12,7 +12,10 @@ gem 'angular_rails_csrf'
 gem 'devise'
 gem "letter_opener", :group => :development
 gem 'forem', :github => "radar/forem", :branch => "rails3"
+# gem 'forem-theme-base', :git => "git://github.com/radar/forem-theme-base"
+gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem 'kaminari', '0.15.1'
+gem 'carrierwave', '0.9.0'
 
 group :development, :test do
   gem 'pry-rails'

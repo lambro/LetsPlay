@@ -24,19 +24,9 @@ app.config(function($routeProvider, $locationProvider){
     templateUrl: "<%= asset_path('groups.html') %>"
   });
 
-  $routeProvider.when('/forum', {
-    controller: 'HomeController',
-    templateUrl: "<%= asset_path('forum.html') %>"
-  });
-
   $routeProvider.when('/games', {
     controller: 'HomeController',
     templateUrl: "<%= asset_path('games.html') %>"
-  });
-
-  $routeProvider.when('/mysessions', {
-    controller: 'HomeController',
-    templateUrl: "<%= asset_path('mysessions.html') %>"
   });
 
   $routeProvider.when('/users/:id', {
@@ -62,7 +52,22 @@ app.config(function($routeProvider, $locationProvider){
   });
 
   $locationProvider.html5Mode(true);
-  $routeProvider.otherwise({
-    redirectTo: '/home'
-  })
+  // $routeProvider.otherwise({
+  //   redirectTo: '/home'
+  // })
+
+// gamingsession-controller //
+
+$routeProvider.when('/gsessions/:id',{
+  controller: 'GamingsessionController',
+  templateUrl: "<%= asset_path('gamingsession.html') %>"
+});
+
+
+$routeProvider.when('/mysessions', {
+  controller: 'GamingsessionController',
+  templateUrl: "<%= asset_path('mysessions.html') %>"
+});
+
+
 });

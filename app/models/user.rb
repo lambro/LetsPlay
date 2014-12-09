@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :dob, :postcode, :profile_picture, :forem_admin
   # attr_accessible :title, :body
 
+  mount_uploader :profile_picture, ProfilePictureUploader
+
   def forem_name
     name
   end

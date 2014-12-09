@@ -11,14 +11,16 @@
   <link href='https://fonts.googleapis.com/css?family=Khand:300,400|Lato:300,400|Quicksand|Inconsolata|Gruppo|Amatic+SC' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "forem" %>
+  <%= javascript_include_tag "forem" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <% if !user_signed_in? %>
   <div class="homecontainer">
   <%= image_tag "controllercollage.jpg", class: "homepage hm-background", id: "hmBackground" %>
-  <%= link_to 'Sign up', new_user_registration_path, target: "_self", class: "signup homepage" %>
-  <%= link_to 'Login', new_user_session_path, target: "_self", class: "login homepage" %>
+  <a href="/users/sign_up" target="_self", data-method="GET", class="signup homepage">Sign up</a>
+  <a href="/users/sign_in" target="_self", data-method="GET", class="login homepage">Login</a>
   </div>
   <% end %>
 
@@ -30,12 +32,14 @@
     Logged in as
     <b>
     <%= current_user.name %><br>
-    <%= image_tag "#{current_user.profile_picture}" %>
+    <%#= image_tag "#{current_user.profile_picture}" %>
+    <%= image_tag "square.png" %>
     </b><br>
     <a href="/letsplay/mysessions">My Gaming Sessions</a><br>
     <a href="/letsplay/users/<%= current_user.id %>">My Profile</a><br>
     <a href="/letsplay/home">Home</a><br>
-    <%= link_to 'log out', destroy_user_session_path, target: "_self", method: :delete, class: "login homepage" %><br>
+    <a href="/users/sign_out" target="_self", data-method="DELETE", class="login homepage">Log out</a><br>
+
 
     <i class="fa fa-cog" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"></i>
 

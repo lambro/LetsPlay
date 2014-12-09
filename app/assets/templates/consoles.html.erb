@@ -9,7 +9,7 @@
   <div ng-click="selectConsole(console)" ng-repeat="console in consoles | filter: {name: search} | orderBy: 'name'" ng-class="{highlighted: console === selectedConsole}" class="each_console">
     <div >
       <a href="/consoles/{{ console.id }}" class="console_name">{{ console.name }}
-      <img class="console_image" src="assets/{{console.console_image}}"></a>
+      <img class="console_image" src="/assets/{{console.console_image}}"></a>
     </div>
   </div>
 </div>

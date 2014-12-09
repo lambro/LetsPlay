@@ -10,9 +10,12 @@ Console.destroy_all
 Game.destroy_all
 User.destroy_all
 ConsolesUsers.destroy_all
+Gamingsession.destroy_all
 
 u1 = User.create(name: "Laura", dob: "24/06/83", email: "laura@email.com", password: "something", postcode: "RM79HU", profile_picture: "square.png", forem_admin: true)
 u2 = User.create(name: "Sarah", dob: "24/07/83", email: "sarah@email.com", password: "something", postcode: "RM79HU", profile_picture: "sarahsq.png", forem_admin: false)
+u3 = User.create(name: "Tobias", dob: "25/07/83", email: "tobias@email.com", password: "something", postcode: "RM79HU", profile_picture: "tobias.png", forem_admin: false)
+u4 = User.create(name: "Ife", dob: "26/07/83", email: "ife@email.com", password: "something", postcode: "RM79HU", profile_picture: "ife.png", forem_admin: false)
 
 c1 = Console.create(name: "PlayStation", console_image: "psx.jpg", console_logo: "rails.png")
 c2 = Console.create(name: "PlayStation2", console_image: "ps2.jpg", console_logo: "rails.png")
@@ -35,8 +38,43 @@ g1 = Game.create(title: "Final Fantasy 10", image: "ff10.jpeg", genre: "JRPG", c
 g2 = Game.create(title: "GTA V", image: "gta5.jpg", genre: "Action", console_id: c3.id)
 g3 = Game.create(title: "Assassins Creed Unity", image: "assassinscreedunity.jpg", genre: "Action", console_id: c4.id)
 g4 = Game.create(title: "Mass Effect 3", image: "me3.jpg", genre: "Action / Drama", console_id: c3.id)
-g5 = Game.create(title: "Fifa 14", image: "fifa15.jpg", genre: "Sports", console_id: c4.id)
+g5 = Game.create(title: "Fifa 15", image: "fifa15.jpg", genre: "Sports", console_id: c4.id)
 g6 = Game.create(title: "Batman: Arkham Origins", image: "batmanorigins.jpg", genre: "Action", console_id: c4.id)
 g7 = Game.create(title: "Infamous Second Son", image: "infamoussecondson.jpg", genre: "Action", console_id: c4.id)
 g8 = Game.create(title: "Alien Isolation", image: "alienisolation.jpg", genre: "Horror", console_id: c4.id)
+g9 = Game.create(title: "Tital Fall", image: "alienisolation.jpg", genre: "Action / FPS", console_id: c12.id)
+
+gs1 = Gamingsession.create(title: "Laura's LAN Party", created_by: u1.id, online: "false", description: "LAN Party at Laura's place, We're going to play some Destiny with Dragonage Inquisition in the background. All the bandwidth you could want as well as beer and pizza!", active: true, location_name: "Laura's Haus", postcode: "RM79HU", console_id1: c3.id, console_id2: c4.id, open: true)
+gs2 = Gamingsession.create(title: "Sarah's Friday night online sesh", created_by: u2.id, online: "true", description: "Its cold outside so lets meet in cyberspace and shoot each other", active: true, console_id1: c3.id, open: true)
+gs3 = Gamingsession.create(title: "Because I love X-box!", created_by: u3.id, online: "false", description: "All night Titanfall! Why? Because we can!", active: true, location_name: "Tobias Game Room", postcode: "RM79HU", console_id1: c12.id, open: true)
+gs4 = Gamingsession.create(title: "Ife's Footie Night ;)", created_by: u4.id, online: "false", description: "Fifa Fifa Fifa! All night.. Get in!", active: true, location_name: "Ife's Footie Palace", postcode: "RM79HU", console_id1: c3.id, open: true)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

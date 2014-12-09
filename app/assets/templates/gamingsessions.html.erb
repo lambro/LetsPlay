@@ -1,0 +1,130 @@
+<div>
+<h1>Gaming Sessions</h1>
+
+<h1>Listing gamingsessions</h1>
+<div ng-repeat="gamingsession in gamingsessions | orderBy: 'Gsdate'">
+<h1>{{gamingsession.title}}</h1>
+<p>Created by: {{gamingsession.created_by}}</p>
+<p>Online session? :</p> {{gamingsession.online}}
+      </td>
+      <td>
+        {{gamingsession.min_age_limit}}
+      </td>
+      <td>
+        {{gamingsession.max_age_limit}}
+      </td>
+      <td>
+        {{gamingsession.description}}
+      </td>
+      <td>
+        {{gamingsession.gsdate}}
+      </td>
+      <td>
+        {{gamingsession.active}}
+      </td>
+      <td>
+        {{gamingsession.location_name}}
+      </td>
+      <td>
+        {{gamingsession.postcode}}
+      </td>
+      <td>
+        {{gamingsession.console_id1}}
+      </td>
+      <td>
+        {{gamingsession.console_id2}}
+      </td>
+      <td>
+        {{gamingsession.console_id3}}
+      </td>
+        <a href="/letsplay/gsessions/{{gamingsession.id}}">View Gaming Session</a>
+      <td>
+
+        <%#= link_to 'Edit', edit_gamingsession_path(gamingsession) %>
+      </td>
+      <td>
+        <%#= link_to 'Destroy', gamingsession, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+      </td>
+    </tr>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSession">
+  Create a New Session
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="newSession" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+   
+        <form name="gamingsessionForm" ng-submit="gamingsessionForm.$valid && addGamingsession()" novalidate>
+          <div>
+            <label>Title</label>
+            <input type="text" ng-model="newGamingsession.name" required> <br>
+
+            <!-- created by will be a hidden field setting it to the current_user.id -->
+
+            <label>online</label>
+            <input type="checkbox" ng-model="newGamingsession.online" required> <br>
+
+            <input type="hidden" ng-model="newGamingsession.created_by" value="{{currentUser.id}}">
+
+            <label>Description</label>
+            <textarea type="text" ng-model="newGamingsession.description" required></textarea> <br>
+
+            <label>Min-Age limit</label>
+            <input type="date" ng-model="newGamingsession.min_age_limit"
+                 placeholder="yyyy-MM-dd" min="1998-01-01" max="1950-01-01" required /> <br>
+
+            <label>Max-Age limit</label>
+            <input type="date" ng-model="newGamingsession.max_age_limit"
+                 placeholder="yyyy-MM-dd" min="1998-01-01" max="1950-01-01" required /> <br>
+
+            <label>Date</label>
+            <input type="datetime-local" ng-model="newGamingsession.gsdate"
+                 placeholder="yyyy-MM-ddTHH:mm:ss" min="2014-12-11" max="2016-01-01" required /> <br>
+            <span class="error" ng-show="GamingsessionForm.input.$error.required">
+                  Required!</span>
+              <span class="error" ng-show="GamingsessionForm.input.$error.datetimelocal">
+                  Not a valid date!</span> <br>
+
+            <label>active</label>
+            <input type="checkbox" ng-model="newGamingsession.active" required> <br>
+
+            <label>Location Name</label>
+            <input type="text" ng-model="newGamingsession.location_name" > <br>
+
+            <label>Postcode</label>
+            <input type="text" ng-model="newGamingsession.postcode" > <br>
+
+            <label>Console</label>
+            <select ng-model="newGamingsession.console_id1" ng-options="console.name for console in consoles"></select><br>
+            <select class="nullable" ng-model="newGamingsession.console_id2" ng-options="console.name for console in consoles"></select><br>
+            <select class="nullable" ng-model="newGamingsession.console_id3" ng-options="console.name for console in consoles"></select><br>
+
+            <label>Open?</label>
+            <input type="checkbox" ng-model="newGamingsession.open" required> <br>
+
+          </div>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="/gamingsessions/new" method="GET">New gaming session</a>
+<br/>
+<%#= link_to 'New Gamingsession', new_gamingsession_path %>
+</div>
