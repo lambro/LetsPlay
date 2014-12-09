@@ -14,7 +14,7 @@ Gamingsession.destroy_all
 
 u1 = User.create(name: "Laura", dob: "24/06/83", email: "laura@email.com", password: "something", postcode: "RM79HU", profile_picture: "square.png", forem_admin: true)
 u2 = User.create(name: "Sarah", dob: "24/07/83", email: "sarah@email.com", password: "something", postcode: "RM79HU", profile_picture: "sarahsq.png", forem_admin: false)
-u3 = User.create(name: "Tobias", dob: "25/07/83", email: "tobias@email.com", password: "something", postcode: "RM79HU", profile_picture: "tobias.png", forem_admin: false)
+u3 = User.create(name: "Tobias", dob: "25/07/83", email: "tobias@email.com", password: "something", postcode: "RM79HU", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/tobias.png')), forem_admin: false)
 u4 = User.create(name: "Ife", dob: "26/07/83", email: "ife@email.com", password: "something", postcode: "RM79HU", profile_picture: "ife.png", forem_admin: false)
 
 c1 = Console.create(name: "PlayStation", console_image: "psx.jpg", console_logo: "rails.png")

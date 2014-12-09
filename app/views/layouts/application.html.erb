@@ -32,8 +32,8 @@
     Logged in as
     <b>
     <%= current_user.name %><br>
-    <%#= image_tag "#{current_user.profile_picture}" %>
-    <%= image_tag "square.png" %>
+    <%= image_tag "#{current_user.profile_picture}" %>
+    <%#= image_tag "square.png" %>
     </b><br>
     <a href="/letsplay/mysessions">My Gaming Sessions</a><br>
     <a href="/letsplay/users/<%= current_user.id %>">My Profile</a><br>
