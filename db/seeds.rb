@@ -12,10 +12,10 @@ User.destroy_all
 ConsolesUsers.destroy_all
 Gamingsession.destroy_all
 
-u1 = User.create(name: "Laura", dob: "24/06/83", email: "laura@email.com", password: "something", postcode: "RM79HU", profile_picture: "square.png", forem_admin: true)
-u2 = User.create(name: "Sarah", dob: "24/07/83", email: "sarah@email.com", password: "something", postcode: "RM79HU", profile_picture: "sarahsq.png", forem_admin: false)
+u1 = User.create(name: "Laura", dob: "24/06/83", email: "laura@email.com", password: "something", postcode: "RM79HU", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/square.png')), forem_admin: true)
+u2 = User.create(name: "Sarah", dob: "24/07/83", email: "sarah@email.com", password: "something", postcode: "RM79HU", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/sarahsq.png')), forem_admin: false)
 u3 = User.create(name: "Tobias", dob: "25/07/83", email: "tobias@email.com", password: "something", postcode: "RM79HU", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/tobias.png')), forem_admin: false)
-u4 = User.create(name: "Ife", dob: "26/07/83", email: "ife@email.com", password: "something", postcode: "RM79HU", profile_picture: "ife.png", forem_admin: false)
+u4 = User.create(name: "Ife", dob: "26/07/83", email: "ife@email.com", password: "something", postcode: "RM79HU", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/ife.png')), forem_admin: false)
 
 c1 = Console.create(name: "PlayStation", console_image: "psx.jpg", console_logo: "rails.png")
 c2 = Console.create(name: "PlayStation2", console_image: "ps2.jpg", console_logo: "rails.png")
@@ -30,9 +30,13 @@ c10 = Console.create(name: "Xbox", console_image: "xbox.png", console_logo: "rai
 c11 = Console.create(name: "Xbox 360", console_image: "xbox360.jpg", console_logo: "rails.png")
 c12 = Console.create(name: "Xbox One", console_image: "xbone.jpg", console_logo: "rails.png")
 
-cu1 = ConsolesUsers.create(user_id: 1, console_id: 1, gamer_tag: "LambXJapan")
+cu1 = ConsolesUsers.create(user_id: 1, console_id: 4, gamer_tag: "LambXJapan")
 cu2 = ConsolesUsers.create(user_id: 1, console_id: 2, gamer_tag: "LambXJapan")
 cu3 = ConsolesUsers.create(user_id: 1, console_id: 3, gamer_tag: "LambXJapan")
+cu3 = ConsolesUsers.create(user_id: 2, console_id: 3, gamer_tag: "LambXJapan")
+cu3 = ConsolesUsers.create(user_id: 3, console_id: 12, gamer_tag: "LambXJapan")
+cu3 = ConsolesUsers.create(user_id: 4, console_id: 4, gamer_tag: "LambXJapan")
+cu3 = ConsolesUsers.create(user_id: 3, console_id: 11, gamer_tag: "LambXJapan")
 
 g1 = Game.create(title: "Final Fantasy 10", image: "ff10.jpeg", genre: "JRPG", console_id: c2.id)
 g2 = Game.create(title: "GTA V", image: "gta5.jpg", genre: "Action", console_id: c3.id)

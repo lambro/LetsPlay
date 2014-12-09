@@ -2,9 +2,7 @@
   <%= image_tag "myprofile1.jpg", class: "homepage background" %>
   <h1> {{ currentUser.name }} </h1>
   <p> {{ currentUser.email }} </p>
-  <img class="user_image" src="/assets/{{currentUser.profile_picture}}"></a>
-  {{currentUser}}
-  <!-- <img class="user_image" src="/assets/square.png"></a> -->
+  <img class="user_image" src="{{currentUser.profile_picture.url}}"></a>
   <h2>My Consoles :</h2>
   <h2 ng-repeat="console_user in console_users | orderBy: 'name'"> {{ console_user.console.name}} | {{console_user.gamer_tag}} </h2><br>
 
