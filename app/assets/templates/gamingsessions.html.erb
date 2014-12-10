@@ -66,13 +66,12 @@
           <div>
             <label>Title</label>
             <input type="text" ng-model="newGamingsession.title"> <br>
-
             <!-- created by will be a hidden field setting it to the current_user.id -->
 
             <label>online</label>
             <input type="checkbox" ng-model="newGamingsession.online"> <br>
 
-            <input type="hidden" ng-model="newGamingsession.created_by" value="{{currentUser.id}}">
+            <input type="hidden" ng-model="newGamingsession.created_by" ng-value="{{currentUser.id}}">
 
             <label>Description</label>
             <textarea type="text" ng-model="newGamingsession.description"></textarea> <br>

@@ -13,6 +13,7 @@ $http.get('/gamingsessions/' + $routeParams.id + '.json').success(function(data)
 });
 
 $scope.addGamingsession = function(){
+  $scope.newGamingsession.created_by = currentUser.id;
   console.log("add gaming session function being called");
   $http.post('/gamingsessions.json', {gamingsession: $scope.newGamingsession}).success(function(gamingsession){
     $scope.gamingsessions.push(gamingsession);

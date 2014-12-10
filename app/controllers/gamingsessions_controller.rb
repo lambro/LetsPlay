@@ -12,6 +12,7 @@ class GamingsessionsController < ApplicationController
   # GET /gamingsessions/1
   # GET /gamingsessions/1.json
   def show
+    # binding.pry
     @gamingsession = Gamingsession.find(params[:id])
 
     respond_to do |format|
