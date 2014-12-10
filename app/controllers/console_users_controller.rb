@@ -4,6 +4,7 @@ class ConsoleUsersController < ApplicationController
   def index
     # @console_users = ConsoleUser.all
     @console_users = current_user.consoles_users
+    # binding.pry
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @console_users, include: :console }

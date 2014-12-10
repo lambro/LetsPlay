@@ -3,17 +3,17 @@
 <head>
   <title>LetsPlay</title>
   <base href="/letsplay/">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular-route.min.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" %>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Khand:300,400|Lato:300,400|Quicksand|Inconsolata|Gruppo|Amatic+SC' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag "forem" %>
   <%= javascript_include_tag "forem" %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular-route.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Khand:300,400|Lato:300,400|Quicksand|Inconsolata|Gruppo|Amatic+SC' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
 </head>
 <body>
   <% if !user_signed_in? %>
@@ -22,6 +22,7 @@
   <a href="/users/sign_up" target="_self", data-method="GET", class="signup homepage">Sign up</a>
   <a href="/users/sign_in" target="_self", data-method="GET", class="login homepage">Login</a>
   </div>
+  <%= yield %>
   <% end %>
 
   <% if user_signed_in? %>
@@ -41,7 +42,7 @@
     <a href="/users/sign_out" target="_self", data-method="DELETE", class="login homepage">Log out</a><br>
 
 
-    <i class="fa fa-cog" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"></i>
+    <i class="fa fa-cog" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editModal"></i>
 
     <i class="fa fa-bars" id="menutoggle"></i>
     </div>
@@ -55,7 +56,7 @@
   </nav>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -72,10 +73,10 @@
       </div>
     </div>
   </div>
-  <div ng-view></div>
- 
-  <% end %>
   <%= yield %>
+  <div ng-view></div>
+  <% end %>
+ 
 
   <main-footer></main-footer>
 

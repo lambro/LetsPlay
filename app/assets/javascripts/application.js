@@ -15,6 +15,7 @@
 //= require angular
 //= require angular-animate
 //= require angular-route
+//= require ui-bootstrap-tpls-0.12.0.min
 //= require static
 //= require forem
 //= require navscript
