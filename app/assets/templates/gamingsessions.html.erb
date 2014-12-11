@@ -103,19 +103,21 @@
                 <input type="text" ng-model="newGamingsession.gamingsession.postcode" > <br>
 
                 <label>Console</label>
-                <select ng-model="newGamingsession.console_id1" ng-options="console.name for console in consoles"></select><br>
+                <select ng-model="newGamingsession.gamingsession.console_id1" ng-options="console.name for console in consoles"></select><br>
 
-                <select class="nullable" ng-model="newGamingsession.console_id2" ng-options="console.name for console in consoles"></select><br>
+                <select class="nullable" ng-model="newGamingsession.gamingsession.console_id2" ng-options="console.name for console in consoles"></select><br>
                 
-                <select class="nullable" ng-model="newGamingsession.console_id3" ng-options="console.name for console in consoles"></select><br>
+                <select class="nullable" ng-model="newGamingsession.gamingsession.console_id3" ng-options="console.name for console in consoles"></select><br>
 
-                <label>User</label>
-
+                <label>Add Users</label>
+                <select ng-model="newGamingsession.user" ng-options="user.name for user in users"></select><br>
+                <select ng-model="newGamingsession.user" ng-options="user.name for user in users"></select><br>
+                <select ng-model="newGamingsession.user" ng-options="user.name for user in users"></select><br>
                 <select ng-model="newGamingsession.user" ng-options="user.name for user in users"></select>
                 <br>
 
                 <label>Open?</label>
-                <input type="checkbox" ng-model="newGamingsession.open" required> <br>
+                <input type="checkbox" ng-model="newGamingsession.gamingsession.open" required> <br>
 
               </div>
               <button type="submit" class="btn btn-primary">Save changes</button>

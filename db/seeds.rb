@@ -55,6 +55,33 @@ Gamingsessions.create(title: "Ife's Footie Night ;)", online: "false", descripti
 
 u1.user_sessions.create(gamingsession_id: g1.id)
 u2.user_sessions.create(gamingsession_id: g1.id)
+u3.user_sessions.create(gamingsession_id: g2.id)
+u4.user_sessions.create(gamingsession_id: g2.id)
+u4.user_sessions.create(gamingsession_id: g3.id)
+u3.user_sessions.create(gamingsession_id: g3.id)
+u2.user_sessions.create(gamingsession_id: g3.id)
+u1.user_sessions.create(gamingsession_id: g3.id)
+u1.user_sessions.create(gamingsession_id: g4.id)
+u2.user_sessions.create(gamingsession_id: g4.id)
+u3.user_sessions.create(gamingsession_id: g4.id)
+
+u1.user_games.create(game_id: g1.id)
+u1.user_games.create(game_id: g2.id)
+u1.user_games.create(game_id: g3.id)
+u1.user_games.create(game_id: g4.id)
+u1.user_games.create(game_id: g5.id)
+u1.user_games.create(game_id: g6.id)
+u2.user_games.create(game_id: g6.id)
+u2.user_games.create(game_id: g7.id)
+u2.user_games.create(game_id: g8.id)
+u2.user_games.create(game_id: g9.id)
+u3.user_games.create(game_id: g1.id)
+u3.user_games.create(game_id: g2.id)
+u3.user_games.create(game_id: g3.id)
+u4.user_games.create(game_id: g4.id)
+u4.user_games.create(game_id: g5.id)
+u4.user_games.create(game_id: g6.id)
+u4.user_games.create(game_id: g7.id)
 
 
 

@@ -13,6 +13,14 @@ app.controller('HomeController', ['$scope', '$routeParams', '$http', function($s
     $scope.games = data;
   });
 
+  $scope.searchGames = function(){
+    console.log("Something")
+  $http.post('/games/get_games.json', {game: {title: $scope.searchGames.title}}).success(function(data){
+    $scope.gameSearchResults = data.results;
+    console.log(data.results)
+  });
+  }
+
   $http.get('/groups.json').success(function(data){
     $scope.groups = data;
   });

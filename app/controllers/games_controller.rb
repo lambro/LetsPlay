@@ -80,4 +80,15 @@ class GamesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def get_games
+    @game = params[:game][:title]
+    @game = @game.gsub(" ", "%20")
+    @games = HTTParty.get("http://www.giantbomb.com/api/search/?api_key=3e945f45a7aaef1bde21284c60ca3f873c2a9989&format=json&query=%22#{@game}%22&resources=game")
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @games }
+    end
+  end
 end

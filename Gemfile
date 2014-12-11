@@ -16,6 +16,8 @@ gem 'forem', :github => "radar/forem", :branch => "rails3"
 gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem 'kaminari', '0.15.1'
 gem 'carrierwave', '0.9.0'
+gem 'httparty', '~> 0.13.3'
+gem "geocoder"
 
 group :development, :test do
   gem 'pry-rails'

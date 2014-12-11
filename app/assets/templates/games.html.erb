@@ -1,9 +1,28 @@
 <%= image_tag "games_list.jpg", class: "homepage background" %>
 <div class="container_games">
 <h1>Games</h1>
+<!-- <p>{{ gameSearchResults }}</p> -->
+
+<form name="gameSearchForm" ng-submit="searchGames()">
+<input ng-model="searchGames.title" type="text"><br><br>
+<button type="submit" class="btn btn-info">Search the net for games</button><br><br><br>
+</form>
+
+<div ng-repeat="game in gameSearchResults">
+  <h2><a href="{{game.api_detail_url}}">{{game.name}}</a></h2><br>
+  <p>other possible aliases? : {{game.aliases}}</p>
+  <img src="{{game.image.small_url}}">
+  <p>{{game.deck}}</p>
+  <p>Add this game to saved games?</p>
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-square-o fa-stack-2x"></i>
+    <i class="fa fa-gamepad fa-stack-1x"></i>
+  </span>
+</div>
 
 <div>
-  <input ng-model="search" type="search">
+  <p>Search titles in your saved games</p><br>
+  <input ng-model="search" type="search" placeholder="Search your saved games"><br>
     <div ng-click="selectGame(game)" ng-repeat="game in games | filter: {title: search} | orderBy: 'name'" class="eachgame">
       <a href="game/{{ game.id }}"><p>{{ game.title }}</p> | {{ game.genre }} <br>
       <img class="game_image" src="/assets/{{game.image}}"></a>

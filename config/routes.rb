@@ -31,7 +31,7 @@ LetsPlay::Application.routes.draw do
 
   resources :gamingsessions
 
-
+  match "games/get_games" => "games#get_games"
   resources :games
 
 
