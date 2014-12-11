@@ -1,4 +1,4 @@
-app.controller('HomeController', function($scope, $routeParams, $http){
+app.controller('HomeController', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http){
   $scope.current_user = currentUser
 
   $http.get('/consoles.json').success(function(data){
@@ -48,4 +48,4 @@ app.controller('HomeController', function($scope, $routeParams, $http){
   //   //Angular function starts with a dollar sign to separate it from custom functions you write yourself; 
   //   $scope.stallForm.$setPristine();
   // }
-});
+}]);

@@ -1,7 +1,7 @@
 <div class="container_games">
   <h1>{{gamingsession.title}}</h1>
 
-  <p>Creator : {{gamingsession.created_by}}</p>
+  <p>Creator : {{gamingsession.name}}</p>
 
   <div ng-show="gamingsession.online">Online!</div>
   <div ng-hide="gamingsession.online">Offline!</div>
@@ -34,6 +34,8 @@
   </p>
 
   <button ng-show="gamingsession.active" ng-click="closeSession(gamingsession.id)">End Session</button>
+
+  <button class="btn" ng-click="acceptSession(gamingsession.id)">Accept</button>
 
   <a href="/letsplay/gsessions">Back</a>
 </div>

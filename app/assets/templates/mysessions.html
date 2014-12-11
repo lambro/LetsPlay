@@ -1,1 +1,22 @@
-<h1>My Gaming Sessions</h1>
+<div class="container_mysessions">
+  <h1>My Gaming Sessions</h1>
+
+  <div ng-repeat="gamingSession in currentUser.gamingSessions" class="eachgame">
+    <h2>{{gamingSession.title}} </h2>
+    <p>{{gamingSession.description}}</p>
+    <p>Location: {{gamingSession.location_name}}, {{gamingSession.postcode}}</p>
+    <p>{{gamingSession.accepted}}</p>
+    <p>{{gamingSession.userSession}}</p>
+
+    <p ng-show="gamingSession.online">This session is online</p>
+    <p ng-hide="gamingSession.online">This session is an offline session</p>
+
+
+    <p ng-show="gamingSession.open">This session is open</p>
+    <button class="btn" ng-show="gamingSession.open">Accept session?</button>
+    <p ng-hide="gamingSession.open">This session is closed</p>
+    <br>
+    <ui-gmap-google-map ng-hide="gamingSession.online" center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+
+  </div>
+</div>

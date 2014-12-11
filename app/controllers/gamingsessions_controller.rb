@@ -5,7 +5,7 @@ class GamingsessionsController < ApplicationController
     @gamingsessions = Gamingsession.all
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @gamingsessions }
+      format.json { render json: @gamingsessions, include: :users }
     end
   end
 
@@ -17,7 +17,7 @@ class GamingsessionsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @gamingsession }
+      format.json { render json: @gamingsession, include: :users }
     end
   end
 
@@ -40,12 +40,15 @@ class GamingsessionsController < ApplicationController
   # POST /gamingsessions
   # POST /gamingsessions.json
   def create
-    @gamingsession = Gamingsession.new(params[:gamingsession])
+    @gamingsession = Gamingsession.new(params[:gamingsessionwithuser][:gamingsession])
+    @gamingsession.save
+    current_user.user_sessions.create(gamingsession_id: @gamingsession.id)
+    @gamingsession.user_sessions.create(user_id: params[:gamingsessionwithuser][:user][:id] )
 
     respond_to do |format|
       if @gamingsession.save
         format.html { redirect_to @gamingsession, notice: 'Gamingsession was successfully created.' }
-        format.json { render json: @gamingsession, status: :created, location: @gamingsession }
+        format.json { render json: @gamingsession, include: :users, status: :created, location: @gamingsession }
       else
         format.html { render action: "new" }
         format.json { render json: @gamingsession.errors, status: :unprocessable_entity }

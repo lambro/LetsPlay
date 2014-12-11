@@ -3,6 +3,7 @@
 <head>
   <title>LetsPlay</title>
   <base href="/letsplay/">
+  <script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
   <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag "forem" %>
   <%= javascript_include_tag "forem" %>
@@ -16,6 +17,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
 </head>
 <body>
+  <a href="./home" class="escapetomain">Back to main page...</a> <br>
   <% if !user_signed_in? %>
   <div class="homecontainer">
   <%= image_tag "controllercollage.jpg", class: "homepage hm-background", id: "hmBackground" %>
@@ -29,6 +31,7 @@
   <nav class="main-nav">
     <div id="show">SHOW MINI MENU</div>
     <div id="hide">HIDE</div>
+
     <div class="sidebaritem1" id="sbar1">
     Logged in as
     <b>
@@ -49,8 +52,8 @@
     <div class="sidebaritem" id="sbar7"><i class="fa fa-bars" id="menutoggle"></i></div>
     <div class="sidebaritem" id="sbar2"><a href="/letsplay/gsessions">Gaming Sessions</a></div>
     <!-- <div class="sidebaritem"><a href="/#/friends">Friends</a></div> -->
-    <div class="sidebaritem" id="sbar3"><a href="/letsplay/groups">Groups</a></div>
-    <div class="sidebaritem" id="sbar4"><a href="/letsplay/forum">Forum</a></div>
+    <div class="sidebaritem" id="sbar3"><a href="/letsplay/friends">Friends</a></div>
+    <div class="sidebaritem" id="sbar4"><a href="/forums">Forum</a></div>
     <div class="sidebaritem" id="sbar5"><a href="/letsplay/games">Games</a></div>
     <div class="sidebaritem" id="sbar6"><a href="/letsplay/consoles">Consoles</a></div>    
   </nav>
@@ -88,6 +91,8 @@
   <%= javascript_tag do %>
   currentUser.currentUserConsoles = <%= raw current_user.consoles.to_json %>;
   currentUser.currentUserConsoleUsers = <%= raw current_user.consoles_users.to_json %>;
+  currentUser.gamingSessions = <%= raw current_user.gamingsessions.to_json %>;
+  currentUser.userSessions = <%= raw current_user.user_sessions.to_json %>;
   <%end%>
   <%end%>
 

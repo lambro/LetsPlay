@@ -1,10 +1,11 @@
-<div>
+<div class="container_gsessions">
   <h1>Gaming Sessions</h1>
   <input ng-model="search" type="search">
-  <div ng-repeat="gamingsession in gamingsessions |  filter: {online: search} | orderBy: 'gsdate'">
+  <div ng-class="eachgame" ng-repeat="gamingsession in gamingsessions |  filter: {online: search} | orderBy: 'gsdate'">
     <h1>{{gamingsession.title}}</h1>
-    <p>Created by: {{gamingsession.created_by}}</p>
-    <p>Online session? :</p> {{gamingsession.online}}
+    <p>Created by: {{gamingsession.users[0].name}}</p>
+    <p ng-show="gamingsession.online">This is an online session</p>
+    <p ng-hide="gamingsession.online">This is a real life session</p>
   </td>
   <td>
     {{gamingsession.min_age_limit}}
@@ -65,27 +66,27 @@
         <form name="gamingsessionForm" ng-submit="addGamingsession()">
           <div>
             <label>Title</label>
-            <input type="text" ng-model="newGamingsession.title"> <br>
+            <input type="text" ng-model="newGamingsession.gamingsession.title"> <br>
             <!-- created by will be a hidden field setting it to the current_user.id -->
 
             <label>online</label>
-            <input type="checkbox" ng-model="newGamingsession.online"> <br>
+            <input type="checkbox" ng-model="newGamingsession.gamingsession.online"> <br>
 
-            <input type="hidden" ng-model="newGamingsession.created_by" ng-value="{{currentUser.id}}">
+            <input type="hidden" ng-model="newGamingsession.user_id" ng-value="{{currentUser.id}}">
 
             <label>Description</label>
             <textarea type="text" ng-model="newGamingsession.description"></textarea> <br>
 
             <label>Min-Age limit</label>
-            <input type="date" ng-model="newGamingsession.min_age_limit"
+            <input type="date" ng-model="newGamingsession.gamingsession.min_age_limit"
             placeholder="yyyy-MM-dd" min="1998-01-01" max="1950-01-01" /> <br>
 
             <label>Max-Age limit</label>
-            <input type="date" ng-model="newGamingsession.max_age_limit"
+            <input type="date" ng-model="newGamingsession.gamingsession.max_age_limit"
             placeholder="yyyy-MM-dd" min="1998-01-01" max="1950-01-01" /> <br>
 
             <label>Date</label>
-            <input type="datetime-local" ng-model="newGamingsession.gsdate"
+            <input type="datetime-local" ng-model="newGamingsession.gamingsession.gsdate"
             placeholder="yyyy-MM-ddTHH:mm:ss" min="2014-12-11" max="2016-01-01" /> <br>
             <span class="error" ng-show="GamingsessionForm.input.$error.required">
               Required!</span>
@@ -93,18 +94,25 @@
                 Not a valid date!</span> <br>
 
                 <label>active</label>
-                <input type="checkbox" ng-model="newGamingsession.active"> <br>
+                <input type="checkbox" ng-model="newGamingsession.gamingsession.active"> <br>
 
                 <label>Location Name</label>
-                <input type="text" ng-model="newGamingsession.location_name" > <br>
+                <input type="text" ng-model="newGamingsession.gamingsession.location_name" > <br>
 
                 <label>Postcode</label>
-                <input type="text" ng-model="newGamingsession.postcode" > <br>
+                <input type="text" ng-model="newGamingsession.gamingsession.postcode" > <br>
 
                 <label>Console</label>
                 <select ng-model="newGamingsession.console_id1" ng-options="console.name for console in consoles"></select><br>
+
                 <select class="nullable" ng-model="newGamingsession.console_id2" ng-options="console.name for console in consoles"></select><br>
+                
                 <select class="nullable" ng-model="newGamingsession.console_id3" ng-options="console.name for console in consoles"></select><br>
+
+                <label>User</label>
+
+                <select ng-model="newGamingsession.user" ng-options="user.name for user in users"></select>
+                <br>
 
                 <label>Open?</label>
                 <input type="checkbox" ng-model="newGamingsession.open" required> <br>

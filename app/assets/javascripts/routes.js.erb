@@ -1,4 +1,4 @@
-app.config(function($routeProvider, $locationProvider){
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
   $routeProvider.when('/home', {
     controller: 'HomeController',
     templateUrl: "<%= asset_path('home.html.erb') %>"
@@ -70,4 +70,4 @@ $routeProvider.when('/mysessions', {
 });
 
 
-});
+}]);

@@ -1,4 +1,52 @@
-.forum{
-  background-color:black;
+#forums .odd, #forums .even{
+  color:black;
+  a{
+    color:white;
+    font-weight: bolder;
+  }
+}
+
+#forums tr.forum.odd td a.title, #forums tr.forum.even td a.title{
+  color:black;
+  font-weight: bolder;
+  font-size: 2em;
+  &:hover{
+    background:transparent;
+    color:red;
+  }
+}
+
+#forums tr.forum.even{
   color:white;
+  background-color:  rgba(74, 33, 174, 1.0);
+}
+
+#forums tr.forum.odd td, #forums tr.forum.odd td a{
+  color:black;
+}
+
+#forums tr.forum.odd td a:hover{
+  color:red;background-color:transparent;
+}
+
+#forums .last_post a{
+  color:green;
+  font-weight: bolder;
+}
+
+tr.topic.odd.unlocked, tr.topic.even.unlocked{
+  background-color: rgba(74, 33, 174, 1.0);
+}
+
+td.byline, td.latest-post, td.posts-count, td.views-count{
+  background: rgba(74, 33, 174, 1.0);
+  a{ 
+    text-decoration:none;
+    background: transparent;}
+}
+#forums{
+  a:hover{
+    color:red;
+    text-decoration: none;
+  }
 }

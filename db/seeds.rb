@@ -48,12 +48,13 @@ g7 = Game.create(title: "Infamous Second Son", image: "infamoussecondson.jpg", g
 g8 = Game.create(title: "Alien Isolation", image: "alienisolation.jpg", genre: "Horror", console_id: c4.id)
 g9 = Game.create(title: "Titan Fall", image: "titanfall.jpg", genre: "Action / FPS", console_id: c12.id)
 
-gs1 = Gamingsession.create(title: "Laura's LAN Party", created_by: u1.id, online: "false", description: "LAN Party at Laura's place, We're going to play some Destiny with Dragonage Inquisition in the background. All the bandwidth you could want as well as beer and pizza!", active: true, location_name: "Laura's Haus", postcode: "RM79HU", console_id1: c3.id, console_id2: c4.id, open: true)
-gs2 = Gamingsession.create(title: "Sarah's Friday night online sesh", created_by: u2.id, online: "true", description: "Its cold outside so lets meet in cyberspace and shoot each other", active: true, console_id1: c3.id, open: true)
-gs3 = Gamingsession.create(title: "Because I love X-box!", created_by: u3.id, online: "false", description: "All night Titanfall! Why? Because we can!", active: true, location_name: "Tobias Game Room", postcode: "RM79HU", console_id1: c12.id, open: true)
-gs4 = Gamingsession.create(title: "Ife's Footie Night ;)", created_by: u4.id, online: "false", description: "Fifa Fifa Fifa! All night.. Get in!", active: true, location_name: "Ife's Footie Palace", postcode: "RM79HU", console_id1: c3.id, open: true)
+Gamingsessions.create(title: "Laura's LAN Party", online: "false", description: "LAN Party at Laura's place, We're going to play some Destiny with Dragonage Inquisition in the background. All the bandwidth you could want as well as beer and pizza!", active: true, location_name: "Laura's Haus", postcode: "RM79HU", console_id1: c3.id, console_id2: c4.id, open: true)
+Gamingsessions.create(title: "Sarah's Friday night online sesh", online: "true", description: "Its cold outside so lets meet in cyberspace and shoot each other", active: true, console_id1: c3.id, open: true)
+Gamingsessions.create(title: "Because I love X-box!", online: "false", description: "All night Titanfall! Why? Because we can!", active: true, location_name: "Tobias Game Room", postcode: "RM79HU", console_id1: c12.id, open: true)
+Gamingsessions.create(title: "Ife's Footie Night ;)", online: "false", description: "Fifa Fifa Fifa! All night.. Get in!", active: true, location_name: "Ife's Footie Palace", postcode: "RM79HU", console_id1: c3.id, open: true)
 
-
+u1.user_sessions.create(gamingsession_id: g1.id)
+u2.user_sessions.create(gamingsession_id: g1.id)
 
 
 
