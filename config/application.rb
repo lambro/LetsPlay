@@ -58,7 +58,7 @@ module LetsPlay
     # Enable the asset pipeline
     config.assets.enabled = true
 
-    config.assets.precompile << 'forem.css' << 'forem.js' << 'forem/base/style.css'
+    config.assets.precompile += ['forem.css', 'forem.js', 'forem/base/style.css']
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
