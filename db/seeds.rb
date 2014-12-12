@@ -12,10 +12,18 @@ User.destroy_all
 ConsolesUsers.destroy_all
 Gamingsession.destroy_all
 
-u1 = User.create(name: "Laura", dob: "24/06/83", email: "laura@email.com", password: "something", postcode: "RM79HU", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/square.png')), forem_admin: true)
-u2 = User.create(name: "Sarah", dob: "24/07/83", email: "sarah@email.com", password: "something", postcode: "RM79HU", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/sarahsq.png')), forem_admin: false)
-u3 = User.create(name: "Tobias", dob: "25/07/83", email: "tobias@email.com", password: "something", postcode: "RM79HU", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/tobias.png')), forem_admin: false)
-u4 = User.create(name: "Ife", dob: "26/07/83", email: "ife@email.com", password: "something", postcode: "RM79HU", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/ife.png')), forem_admin: false)
+u1 = User.create(name: "Laura", dob: "24/06/83", email: "laura@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/square.png')), forem_admin: true)
+u2 = User.create(name: "Sarah", dob: "24/07/83", email: "sarah@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/sarahsq.png')), forem_admin: false)
+u3 = User.create(name: "Tobias", dob: "25/07/83", email: "tobias@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/tobias.png')), forem_admin: false)
+u4 = User.create(name: "Ian", dob: "26/07/83", email: "ian@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/ian.png')), forem_admin: false)
+u4 = User.create(name: "Dave W", dob: "26/07/83", email: "davew@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/davew.png')), forem_admin: false)
+u4 = User.create(name: "Beth", dob: "26/07/83", email: "beth@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/beth.png')), forem_admin: false)
+u4 = User.create(name: "Lulu", dob: "26/07/83", email: "lulu@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/lulu.png')), forem_admin: false)
+u4 = User.create(name: "Dominic", dob: "26/07/83", email: "dom@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/dom.png')), forem_admin: false)
+u4 = User.create(name: "Dave R", dob: "26/07/83", email: "daver@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/daver.png')), forem_admin: false)
+u4 = User.create(name: "Jacob", dob: "26/07/83", email: "jacob@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/jacob.png')), forem_admin: false)
+u4 = User.create(name: "George", dob: "26/07/83", email: "george@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/george.png')), forem_admin: false)
+u4 = User.create(name: "Ben", dob: "26/07/83", email: "ben@email.com", password: "something", postcode: "EC1R 5EN", profile_picture: File.open(File.join(Rails.root, 'app/assets/images/benc.png')), forem_admin: false)
 
 c1 = Console.create(name: "PlayStation", console_image: "psx.jpg", console_logo: "rails.png")
 c2 = Console.create(name: "PlayStation2", console_image: "ps2.jpg", console_logo: "rails.png")
@@ -48,10 +56,10 @@ g7 = Game.create(title: "Infamous Second Son", image: "infamoussecondson.jpg", g
 g8 = Game.create(title: "Alien Isolation", image: "alienisolation.jpg", genre: "Horror", console_id: c4.id)
 g9 = Game.create(title: "Titan Fall", image: "titanfall.jpg", genre: "Action / FPS", console_id: c12.id)
 
-Gamingsession.create(title: "Laura's LAN Party", online: "false", description: "LAN Party at Laura's place, We're going to play some Destiny with Dragonage Inquisition in the background. All the bandwidth you could want as well as beer and pizza!", active: true, location_name: "Laura's Haus", postcode: "RM79HU", console_id1: c3.id, console_id2: c4.id, open: true)
+Gamingsession.create(title: "Laura's LAN Party", online: "false", description: "LAN Party at Laura's place, We're going to play some Destiny with Dragonage Inquisition in the background. All the bandwidth you could want as well as beer and pizza!", active: true, location_name: "Laura's Haus", postcode: "EC1R 5EN", console_id1: c3.id, console_id2: c4.id, open: true)
 Gamingsession.create(title: "Sarah's Friday night online sesh", online: "true", description: "Its cold outside so lets meet in cyberspace and shoot each other", active: true, console_id1: c3.id, open: true)
-Gamingsession.create(title: "Because I love X-box!", online: "false", description: "All night Titanfall! Why? Because we can!", active: true, location_name: "Tobias Game Room", postcode: "RM79HU", console_id1: c12.id, open: true)
-Gamingsession.create(title: "Ife's Footie Night ;)", online: "false", description: "Fifa Fifa Fifa! All night.. Get in!", active: true, location_name: "Ife's Footie Palace", postcode: "RM79HU", console_id1: c3.id, open: true)
+Gamingsession.create(title: "Because I love X-box!", online: "false", description: "All night Titanfall! Why? Because we can!", active: true, location_name: "Tobias Game Room", postcode: "EC1R 5EN", console_id1: c12.id, open: true)
+Gamingsession.create(title: "Ife's Footie Night ;)", online: "false", description: "Fifa Fifa Fifa! All night.. Get in!", active: true, location_name: "Ife's Footie Palace", postcode: "EC1R 5EN", console_id1: c3.id, open: true)
 
 u1.user_sessions.create(gamingsession_id: g1.id)
 u2.user_sessions.create(gamingsession_id: g1.id)

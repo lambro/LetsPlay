@@ -6,23 +6,24 @@
     <p>Created by: {{gamingsession.users[0].name}}</p>
     <p ng-show="gamingsession.online">This is an online session</p>
     <p ng-hide="gamingsession.online">This is a real life session</p>
+    <p ng-show="gamingsession.active">This session is active</p>
+    <p ng-hide="gamingsession.active">This session is closed</p>
   </td>
-  <td>
+ <!--  <td>
     {{gamingsession.min_age_limit}}
   </td>
   <td>
     {{gamingsession.max_age_limit}}
-  </td>
+  </td> -->
   <td>
     {{gamingsession.description}}
   </td>
-  <td>
+<!--   <td>
     {{gamingsession.gsdate}}
-  </td>
+  </td> -->
+
   <td>
-    {{gamingsession.active}}
-  </td>
-  <td>
+    <p>Location :</p>
     {{gamingsession.location_name}}
   </td>
   <td>

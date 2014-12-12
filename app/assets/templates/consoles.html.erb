@@ -1,15 +1,15 @@
-<main-header></main-header>
-{{current_user.name}}
-<nav-bar></nav-bar>
-
-<h1>Console Page</h1>
+<div class="container_games">
+  <h1>Console Page</h1>
 
 <div>
   <input ng-model="search" type="search"> <br>
-  <div ng-click="selectConsole(console)" ng-repeat="console in consoles | filter: {name: search} | orderBy: 'name'" ng-class="{highlighted: console === selectedConsole}" class="each_console">
+  <div ng-click="selectConsole(console)" ng-repeat="console in consoles | filter: {name: search} | orderBy: 'name'" >
     <div >
-      <a href="/consoles/{{ console.id }}" class="console_name">{{ console.name }}
-      <img class="console_image" src="/assets/{{console.console_image}}"></a>
+      <a href="/consoles/{{ console.id }}" class="console_name">
+        <h2>{{ console.name }}</h2>
+        <img src="/assets/{{console.console_image}}">
+      </a>
     </div>
   </div>
+</div>
 </div>

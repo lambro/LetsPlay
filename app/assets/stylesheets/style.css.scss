@@ -22,6 +22,10 @@ a{
   text-decoration: none;
 }
 
+p{
+  font-family: 'Quicksand', sans-serif;
+}
+
 .escapetomain{
   float:left;
 }
@@ -309,6 +313,7 @@ body
   }
   img{
     height: 200px;
+    max-width: 90%;
   }
 }
 
@@ -358,7 +363,7 @@ input, textarea {
 
 // ------------- animations -------------- //
 
-// these are supposed to be the colors of the consoles blue and green.. reminder to myself reevaluate use of red here
+// these are supposed to be the colors of the consoles blue and green.. reminder to myself do i want to use red?
 
 @-webkit-keyframes rotate {
   0% { color: #0A59AE}
