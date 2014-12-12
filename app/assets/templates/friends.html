@@ -1,4 +1,16 @@
-<main-header></main-header>
-<nav-bar></nav-bar>
+<div class="container_gsessions">
+  <h1>Friends</h1>
 
-<h1>Friends</h1>
+  <div ng-repeat="user in users">
+    <h2>{{user.name}}</h2>
+    <img src="{{user.profile_picture.url}}">
+    <p>Users consoles:</p>
+    <p ng-repeat="console in user.consoles"> {{console.name}}</p>
+    <p>Users Curent Sessions</p>
+    <div ng-repeat="gamingsession in user.gamingsessions">
+      <a href="/letsplay/gsessions/{{gamingsession.id}}">
+        <h2>{{gamingsession.title}}</h2> <h2 ng-show="gamingsession.location_name">@</h2>
+        <p ng-show="gamingsession.location_name">{{gamingsession.location_name}}</p></a>
+      </div>
+    </div>
+  </div>

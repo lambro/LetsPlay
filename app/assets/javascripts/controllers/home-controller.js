@@ -25,6 +25,12 @@ app.controller('HomeController', ['$scope', '$routeParams', '$http', function($s
     $scope.groups = data;
   });
 
+  
+  $http.get('/gamingsessions/' + $routeParams.id + '.json').success(function(data){
+
+    $scope.gamingsession = data;
+  });
+
   $scope.currentUser = currentUser
 
   $http.get('/console_users.json').success(function(data){

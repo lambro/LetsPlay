@@ -9,11 +9,11 @@
     <p>{{gamingSession.userSession}}</p>
 
     <p ng-show="gamingSession.online">This session is online</p>
-    <p ng-hide="gamingSession.online">This session is an offline session</p>
+    <p ng-hide="gamingSession.online">This session is an offline session</p><br>
 
 
     <p ng-show="gamingSession.open">This session is open</p> <br>
-    <button class="btn" ng-show="gamingSession.open" ng-click="acceptSession()" >Accept session?</button>
+    <button class="btn btn-primary" ng-show="gamingSession.open" ng-click="acceptSession()" >Accept session?</button>
     <p ng-hide="gamingSession.open">This session is closed</p>
     <br>
     <ui-gmap-google-map ng-hide="gamingSession.online" center='map.center' zoom='map.zoom'><ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box></ui-gmap-google-map>

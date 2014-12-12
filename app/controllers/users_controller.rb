@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @users }
+      format.json { render json: @users, include: :consoles, include: :gamingsessions }
     end
   end
 
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @user }
+      format.json { render json: @user, include: :consoles, include: :gamingsessions }
     end
   end
 

@@ -13,12 +13,13 @@
 }
 
 a{
-  color:white;
-  text-decoration:none;
+  color: white;
+  text-decoration: none;
 }a:visited{
   color:white;
 }a:hover{
   color:red;
+  text-decoration: none;
 }
 
 .escapetomain{
@@ -38,6 +39,8 @@ body
 
 .angular-google-map-container {
   height: 300px;
+  width: 85%;
+  margin: 20px auto;
   border-radius: 10px;}
 
 #mainPage{
@@ -286,7 +289,7 @@ body
   background:black;
   border: 5px solid yellow;
   border-radius: 10px;
-  margin: 100px ;
+  margin: 100px auto;
   text-align: center;
   .eachgame{
     margin: 10px;

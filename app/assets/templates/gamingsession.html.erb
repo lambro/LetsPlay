@@ -1,27 +1,21 @@
 <div class="container_games">
   <h1>{{gamingsession.title}}</h1>
-
-  <p>Creator : {{gamingsession.name}}</p>
-
-  <div ng-show="gamingsession.online">Online!</div>
-  <div ng-hide="gamingsession.online">Offline!</div>
-
-  <p>Min age: {{gamingsession.min_age_limit}}</p>
-
-  <p> Description: </p>
+  <div ng-show="gamingsession.online">this is an online session!</div>
+  <div ng-hide="gamingsession.online">this is an offline session!</div>
+  <!-- <p>Min age: {{gamingsession.min_age_limit}}</p> -->
+  <h3> Description: </h3>
   <p>{{gamingsession.description}} </p> <br>
-
   <p> Date: {{gamingsession.gsdate}} </p>
-  
   <div ng-show="gamingsession.active">This session is active</div>
   <div ng-hide="gamingsession.active">This session is closed</div>
-
   <p>
     <b>Location:</b>
     {{gamingsession.location_name}}, {{gamingsession.postcode}}
   </p>
+
+  <ui-gmap-google-map ng-hide="gamingSession.online" center='map.center' zoom='map.zoom'><ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box></ui-gmap-google-map>
   <p>
-    <b>Console id1:</b>
+<!--     <b>Console id1:</b>
     {{gamingsession.console_id1}}
   </p>
   <p>
@@ -31,11 +25,11 @@
   <p>
     <b>Console id3:</b>
     {{gamingsession.console_id3}}
-  </p>
+  </p> -->
 
-  <button ng-show="gamingsession.active" ng-click="closeSession(gamingsession.id)">End Session</button>
+  <button ng-show="gamingsession.active" class="btn btn-info" ng-click="closeSession(gamingsession.id)">End Session</button>
 
-  <button class="btn" ng-click="acceptSession(gamingsession.id)">Accept</button>
+  <button class="btn btn-info" ng-click="acceptSession(gamingsession.id)">Accept</button>
 
-  <a href="/letsplay/gsessions">Back</a>
+  <a href="/letsplay/gsessions" class="btn btn-primary">Back</a>
 </div>
