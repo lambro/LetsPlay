@@ -17,9 +17,11 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
 </head>
 <body>
-  <a href="./home" class="escapetomain">Back to main page...</a> <br>
   <% if !user_signed_in? %>
   <div class="homecontainer">
+  <h1 class="maintitle">Lets Play</h1>
+  <h2 class="maintitle">A site for social gamers</h2>
+  <p class="maintitle">Please sign in to continue...</p>
   <%= image_tag "controllercollage.jpg", class: "homepage hm-background", id: "hmBackground" %>
   <a href="/users/sign_up" target="_self", data-method="GET", class="signup homepage">Sign up</a>
   <a href="/users/sign_in" target="_self", data-method="GET", class="login homepage">Login</a>
@@ -28,6 +30,7 @@
   <% end %>
 
   <% if user_signed_in? %>
+  <a href="./home" class="escapetomain">Back to main page...</a> <br>
   <nav class="main-nav">
     <div id="show">SHOW MINI MENU</div>
     <div id="hide">HIDE</div>

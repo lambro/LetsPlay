@@ -15,7 +15,7 @@ app.controller('HomeController', ['$scope', '$routeParams', '$http', function($s
 
   $scope.searchGames = function(){
     console.log("Something")
-  $http.post('/games/get_games.json', {game: {title: $scope.searchGames.title}}).success(function(data){
+    $http.post('/games/get_games.json', {game: {title: $scope.searchGames.title}}).success(function(data){
     $scope.gameSearchResults = data.results;
     console.log(data.results)
   });

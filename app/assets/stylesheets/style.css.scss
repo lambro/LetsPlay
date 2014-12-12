@@ -34,6 +34,13 @@ input{
   color:black;
 }
 
+#mainbutton input{
+background-color:transparent;
+padding:0;
+font-size:1em;
+width:100%;
+}
+
 body
 {
   padding-bottom:100px;
@@ -47,22 +54,38 @@ body
   margin: 20px auto;
   border-radius: 10px;}
 
-#mainPage{
-  width:105%;
+h1.maintitle{
   text-align:center;
-  font-size: 3rem;
-  background:rgba(0, 0, 0, 0.7);
+  font-size: 5em;
+  background:transparent;
   margin-left:-20px;
   position: fixed;
-  top:20px;
+  top:10px;
+  right:42%;
+  display: block;
+  vertical-align: middle;
+  font-family: 'Amatic SC', cursive;
+  -webkit-animation: rotate 10s alternate infinite;
+  #letsplay{
+  font-family: 'Amatic SC', cursive;
+  -webkit-animation: rotate 10s alternate infinite;
+  }
+}
+
+h2.maintitle{
+  width:105%;
+  text-align:center;
+  font-size: 3em;
+  background:transparent;
+  margin-left:-20px;
+  position: fixed;
+  top:80px;
   padding-left:10px;
   padding-right:30px;
   display: block;
   vertical-align: middle;
-  #letsplay{
-  font-family: 'Gruppo', cursive;
-  -webkit-animation: rotate 10s alternate infinite;
-  }
+  font-family: 'Amatic SC', cursive;
+  color:white;
 }
 
 #letsplaymini{
@@ -76,11 +99,10 @@ body
     margin:2%;
     letter-spacing: 2px;
   }
-  .signup, .login{
+  .signup, .login, p.maintitle{
     font-size:2rem;
     position:fixed;
     top:70%;
-    left:50%;
     letter-spacing: 1.5px;
   }
   .signup{
@@ -89,8 +111,13 @@ body
   }
   .login{
     top:75%;
-    left:43%;
+    left:45%;
   }
+  p.maintitle{
+    top:80%;
+    left:38.5%;
+  }
+
   .fa-gamepad{
     height:40px;
     font-size:3em;
@@ -222,13 +249,13 @@ body
     background-color:rgba(119, 4, 4, 1.0);
   }
   #sbar5{
-    background-color:rgba(158, 5, 5, 1.0);
+    background-color:rgba(148, 5, 5, 1.0);
   }
   #sbar4{
-    background-color:rgba(178, 6, 6, 1.0);
+    background-color:rgba(168, 6, 6, 1.0);
   }
   #sbar3{
-    background-color:rgba(198, 6, 6, 1.0);
+    background-color:rgba(188, 6, 6, 1.0);
   }
   #sbar2{
     background-color:rgba(218, 7, 7, 1.0);
@@ -359,6 +386,14 @@ input, textarea {
   width:50%;
   border-radius:5px;
   color:black;
+}
+
+#myGame:hover{
+  color:rgba(169, 207, 0, 1.0);
+}
+
+.mygame{
+  color: orange;
 }
 
 // ------------- animations -------------- //
