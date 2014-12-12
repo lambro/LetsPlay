@@ -22,9 +22,10 @@
     {{gamingsession.gsdate}}
   </td> -->
 
-  <td>
+  <td><div ng-hide="gamingsession.online">
     <p>Location :</p>
     {{gamingsession.location_name}}
+    </div>
   </td>
   <td>
     {{gamingsession.postcode}}
@@ -38,7 +39,7 @@
   <td>
     {{gamingsession.console_id3}}
   </td>
-  <a href="/letsplay/gsessions/{{gamingsession.id}}">View Gaming Session</a>
+  <h3><a href="/letsplay/gsessions/{{gamingsession.id}}">View Gaming Session</a></h3>
   <td>
 
     <%#= link_to 'Edit', edit_gamingsession_path(gamingsession) %>
@@ -63,30 +64,29 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-
         <form name="gamingsessionForm" ng-submit="addGamingsession()">
           <div>
-            <label>Title</label>
+            <b>Title</b><br>
             <input type="text" ng-model="newGamingsession.gamingsession.title"> <br>
             <!-- created by will be a hidden field setting it to the current_user.id -->
 
-            <label>online</label>
+            <p>online</p>
             <input type="checkbox" ng-model="newGamingsession.gamingsession.online"> <br>
 
             <input type="hidden" ng-model="newGamingsession.user_id" ng-value="{{currentUser.id}}">
 
-            <label>Description</label>
+            <b>Description<b><br>
             <textarea type="text" ng-model="newGamingsession.description"></textarea> <br>
-
-            <label>Min-Age limit</label>
+<!-- 
+            <p>Min-Age limit</p>
             <input type="date" ng-model="newGamingsession.gamingsession.min_age_limit"
             placeholder="yyyy-MM-dd" min="1998-01-01" max="1950-01-01" /> <br>
 
-            <label>Max-Age limit</label>
+            <p>Max-Age limit</p>
             <input type="date" ng-model="newGamingsession.gamingsession.max_age_limit"
             placeholder="yyyy-MM-dd" min="1998-01-01" max="1950-01-01" /> <br>
-
-            <label>Date</label>
+ -->
+            <b>Date</b><br>
             <input type="datetime-local" ng-model="newGamingsession.gamingsession.gsdate"
             placeholder="yyyy-MM-ddTHH:mm:ss" min="2014-12-11" max="2016-01-01" /> <br>
             <span class="error" ng-show="GamingsessionForm.input.$error.required">
@@ -94,31 +94,31 @@
               <span class="error" ng-show="GamingsessionForm.input.$error.datetimelocal">
                 Not a valid date!</span> <br>
 
-                <label>active</label>
-                <input type="checkbox" ng-model="newGamingsession.gamingsession.active"> <br>
+                <p class="checkbox">active</p>
+                <input type="checkbox" class="checkbox" ng-model="newGamingsession.gamingsession.active" required> <br>
 
-                <label>Location Name</label>
+                <b>Location Name</b><br>
                 <input type="text" ng-model="newGamingsession.gamingsession.location_name" > <br>
 
-                <label>Postcode</label>
+                <b>Postcode</b><br>
                 <input type="text" ng-model="newGamingsession.gamingsession.postcode" > <br>
 
-                <label>Console</label>
-                <select ng-model="newGamingsession.gamingsession.console_id1" ng-options="console.name for console in consoles"></select><br>
-
+                <b class="dropdown">Console</b> <br>
+                <select class="dropdown" ng-model="newGamingsession.gamingsession.console_id1" ng-options="console.name for console in consoles"></select><br>
+<!-- 
                 <select class="nullable" ng-model="newGamingsession.gamingsession.console_id2" ng-options="console.name for console in consoles"></select><br>
                 
-                <select class="nullable" ng-model="newGamingsession.gamingsession.console_id3" ng-options="console.name for console in consoles"></select><br>
+                <select class="nullable" ng-model="newGamingsession.gamingsession.console_id3" ng-options="console.name for console in consoles"></select><br> -->
 
-                <label>Add Users</label>
-                <select ng-model="newGamingsession.user" ng-options="user.name for user in users"></select><br>
-                <select ng-model="newGamingsession.user" ng-options="user.name for user in users"></select><br>
+                <b class="dropdown">Add Users</b> <br>
+                <select class="dropdown" ng-model="newGamingsession.user" ng-options="user.name for user in users"></select><br>
+      <!--           <select ng-model="newGamingsession.user" ng-options="user.name for user in users"></select><br>
                 <select ng-model="newGamingsession.user" ng-options="user.name for user in users"></select><br>
                 <select ng-model="newGamingsession.user" ng-options="user.name for user in users"></select>
-                <br>
+                <br> -->
 
-                <label>Open?</label>
-                <input type="checkbox" ng-model="newGamingsession.gamingsession.open" required> <br>
+                <p class="checkbox">Open?</p>
+                <input type="checkbox" class="checkbox" ng-model="newGamingsession.gamingsession.open" required> <br>
 
               </div>
               <button type="submit" class="btn btn-primary">Save changes</button>

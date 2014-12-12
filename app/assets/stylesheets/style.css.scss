@@ -377,10 +377,6 @@ h2.maintitle{
   }
 }
 
-.modal-content{
-  background-color:black;
-}
-
 input, textarea {
   border:none;
   width:50%;
@@ -394,6 +390,26 @@ input, textarea {
 
 .mygame{
   color: orange;
+}
+
+// modal styling
+
+.modal-body{
+  p{
+    display:inline-block;
+    margin-left:10%;
+  }
+  .checkbox{
+    display:inline-block;
+  }
+}
+
+.dropdown{
+  
+}
+
+.modal-content{
+  background-color:black;
 }
 
 // ------------- animations -------------- //
