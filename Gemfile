@@ -18,6 +18,7 @@ gem 'kaminari', '0.15.1'
 gem 'carrierwave', '0.9.0'
 gem 'httparty', '~> 0.13.3'
 gem "geocoder"
+gem "fog", "~> 1.3.1"
 
 group :development, :test do
   gem 'pry-rails'
