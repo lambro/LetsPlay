@@ -34,6 +34,15 @@ input{
   color:black;
 }
 
+.actions{
+  width: 50%;
+}
+
+.field{
+  display:inline-block;
+  width:50%;
+}
+
 #mainbutton input{
 background-color:transparent;
 padding:0;
@@ -58,10 +67,10 @@ h1.maintitle{
   text-align:center;
   font-size: 5em;
   background:transparent;
-  margin-left:-20px;
   position: fixed;
   top:10px;
-  right:42%;
+  margin:0 !important;
+  width:100%;
   display: block;
   vertical-align: middle;
   font-family: 'Amatic SC', cursive;
@@ -73,15 +82,12 @@ h1.maintitle{
 }
 
 h2.maintitle{
-  width:105%;
   text-align:center;
   font-size: 3em;
   background:transparent;
-  margin-left:-20px;
+  width:100%;
+  top:30%;
   position: fixed;
-  top:80px;
-  padding-left:10px;
-  padding-right:30px;
   display: block;
   vertical-align: middle;
   font-family: 'Amatic SC', cursive;
@@ -107,15 +113,15 @@ h2.maintitle{
   }
   .signup{
     top:75%;
-    left:51%;
+    left:50%;
   }
   .login{
     top:75%;
-    left:45%;
+    left:40%;
   }
   p.maintitle{
-    top:80%;
-    left:38.5%;
+    width:100%;
+    text-align:center;
   }
 
   .fa-gamepad{
@@ -192,10 +198,6 @@ h2.maintitle{
 
 .hometitle{
   text-align:center;
-}
-
-.field{
-  display:inline-block;
 }
 
 .each_console{
@@ -434,3 +436,132 @@ input, textarea {
   89% { color: #4BEB33}
   100% { color: #29BA12}
 }
+
+// media queries //
+
+@media screen and (max-width: 768px) {
+  body{background-color: black;}
+  #intro.introduction, #maincontent { width:100%; padding:0;}
+}
+
+@media screen and (max-width: 480px) {
+  h1.maintitle{
+    text-align:center;
+    font-size: 5em;
+    background:transparent;
+    position: fixed;
+    top:10%;
+    margin:0 !important;
+    width:100%;
+    display: block;
+    vertical-align: middle;
+    font-family: 'Amatic SC', cursive;
+    -webkit-animation: rotate 10s alternate infinite;
+    #letsplay{
+    font-family: 'Amatic SC', cursive;
+    -webkit-animation: rotate 10s alternate infinite;
+    }
+  }
+  h2.maintitle{
+    text-align:center;
+    font-size: 4em;
+    background:transparent;
+    width:100%;
+    top:20%;
+    position: fixed;
+    display: block;
+    vertical-align: middle;
+    font-family: 'Amatic SC', cursive;
+    color:white;
+  }
+  .hm-background{
+    position:fixed;
+    top:30%;
+    z-index:-100;
+    -webkit-transform: scaleX(-1);
+  }
+  body{background-color: black;}
+  #intro.introduction, #maincontent { width:100%; padding:0;}
+  .homecontainer{
+    text-align:center;
+    h1{
+      margin:2%;
+      letter-spacing: 2px;
+    }
+    .signup, .login, p.maintitle{
+      font-size:2rem;
+      position:fixed;
+      letter-spacing: 2px;
+    }
+    .signup{
+      top:77%;
+      width:100%;
+      font-size: 2.5em;
+      left:0;
+    }
+    .login{
+      top:85%;
+      width:100%;
+      font-size: 2.5em;
+      left:0;
+    }
+    p.maintitle{
+      width:100%;
+      text-align:center;
+      top:65%;
+    }
+
+    .fa-gamepad{
+      height:40px;
+      font-size:3em;
+      display:inline;
+      line-height:40px;
+      vertical-align: center;
+      width: 100%;
+      text-align:center;
+      input{
+        height:30px;
+        margin:5px;
+        vertical-align: top;
+        border:none;
+        border-radius:5px;
+        transition: 0.2s all ;
+      }
+      p{
+        display:inline;
+        vertical-align: center;
+        font-size:2rem;
+        margin-left: 2%;
+      }
+    }
+  }
+
+  .allnewsignup{
+    width:100%;
+    background-color:black;
+    z-index: 1000 !important;
+    -webkit-transform: translateZ(0);
+    .newsignup{
+      width:100%;
+      input{
+        height:70px;
+        text-align:center;
+        font-size: 1.5em;
+        line-height:70px;
+        width:100%
+      }
+    }
+    .actions{
+      width: 50%;
+      font-size: 1.5em;
+      margin:5% 35%;
+    }
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  body{background-color: black;}
+  #intro.introduction, #maincontent { width:100%; padding:0;}
+}
+
