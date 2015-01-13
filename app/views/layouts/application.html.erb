@@ -32,10 +32,14 @@
   <% if user_signed_in? %>
   <%= image_tag "hello.jpg", class: "homepage background" %>
   <a href="./home" class="escapetomain">Back to main page...</a> <br>
+
+  <a class="twitter-timeline" href="https://twitter.com/hashtag/gaming" data-widget-id="554954769375453184"   width="200"
+  height="500">#gaming Tweets</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
   <nav class="main-nav">
     <div id="show">SHOW MINI MENU</div>
     <div id="hide">HIDE</div>
-
     <div class="sidebaritem1" id="sbar1">
     Logged in as
     <b>
