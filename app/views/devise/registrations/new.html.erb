@@ -6,7 +6,7 @@
   <%= devise_error_messages! %>
 
   <div class="field newsignup">
-    <%= f.text_field :name, placeholder: "Name" %>
+    <%= f.text_field :name, placeholder: "Name", autofocus: true%>
   </div><br>
 
   <div class="field newsignup">
@@ -21,8 +21,8 @@
     <%= f.password_field :password_confirmation, autocomplete: "off",  placeholder: "Confirm Password"  %>
   </div> <br>
 
-  <div class="actions btn btn-primary">
-    <%= f.submit "Sign up" %>
+  <div id="mainbutton2" class="actions btn btn-primary">
+    <%= f.submit "Go!" %>
   </div>
 <% end %>
 

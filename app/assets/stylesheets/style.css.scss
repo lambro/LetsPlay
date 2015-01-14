@@ -39,7 +39,7 @@ a{
       width:50%;
     }
 
-    #mainbutton input{
+    #mainbutton input {
       background-color:transparent;
       padding:0;
       font-size:1em;
@@ -92,6 +92,9 @@ a{
       #letsplaymini{
   // these styles will apply to the mini version of the main page header that will be seen on all other pages in the site
   display:none;
+}
+.allnewsignup, .loginform{
+  margin-top:15%;
 }
 
 .homecontainer{
@@ -214,7 +217,6 @@ a{
     display:inline-block;
   }
 }
-
 
 .main-nav{
   text-align: center;
@@ -803,6 +805,10 @@ and (max-device-width : 480px) {
         width: 50%;
         font-size: 1.5em;
         margin:5% 35%;
+        input{
+          background-color: transparent !important;
+          width:100%;
+        }
       }
     }
   body{background-color: black;}
